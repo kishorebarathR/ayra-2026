@@ -50,7 +50,7 @@ const menuItems = [
     {
         name: 'Schools',
         submenu: [
-            { name: 'Engg & Tech', slug: 'engg-tech' },
+            { name: 'Engg & Tech', slug: 'engg-and-tech' },
             { name: 'Sports Sciences', slug: 'sports-sciences' },
             { name: 'Business', slug: 'business' },
             { name: 'Hospitality', slug: 'hospitality' },
