@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { FaSearch, FaBars, FaTimes } from 'react-icons/fa'
 import { MdKeyboardArrowRight, MdKeyboardArrowUp } from 'react-icons/md'
+import { usePathname } from 'next/navigation'
 
 // --- Menu Data and Utility ---
 const menuItems = [
@@ -136,6 +137,19 @@ const NavBar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
     const [isMobile, setIsMobile] = useState(false)
     const [isScrolled, setIsScrolled] = useState(false)
+    const pathname = usePathname();
+
+    useEffect(() => {
+        if (typeof window !== 'undefined' && 'scrollRestoration' in window.history) {
+            window.history.scrollRestoration = 'manual';
+        }
+    }, []);
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }, [pathname]);
 
     useEffect(() => {
         const handleResize = () => setIsMobile(window.innerWidth < 1024)
@@ -153,26 +167,42 @@ const NavBar = () => {
     return (
         <nav className={`${isScrolled ? 'fixed top-0 left-0 w-full z-50' : ''} bg-[#002561] text-white shadow-[0_3px_8px_#0000005C] transition-all duration-500`}>
             <div className="grid lg:grid-cols-[15%,85%] grid-cols-[40%,60%] items-center">
-                <div className="flex items-center justify-center border-r border-dashed border-white/20 lg:p-0 p-2 h-full">
+                <div className="flex items-center justify-center border-r border-dashed border-white/20 lg:p-2 p-2 h-full">
                     <Link href="/"><Image src="/ayra-logo.svg" alt="AYRA Logo" width={120} height={40} className="h-full w-full lg:px-7" /></Link>
                 </div>
                 {/* Desktop Nav */}
                 <div className="hidden lg:flex flex-col border-l border-dashed border-white/20 h-full justify-center">
-                    <div className="grid grid-cols-7 gap-4 border-b border-dashed border-white/20 lg:px-16 py-2 h-1/2 items-center">
-                        <div className="flex items-center space-x-6 gap-5 col-span-4 h-full">
+                    <div className="grid grid-cols-8 gap-4 border-b border-dashed border-white/20 lg:px-16 py-2 h-1/2 items-center">
+                        <div className="flex items-center space-x-6 gap-5 col-span-3 h-full">
                             <Link href="/resources" className="hover:text-gray-300 text-[14px] 2xl:text-[18px]">Resources</Link>
                             <Link href="/news-&-events" className="hover:text-gray-300 text-[14px] 2xl:text-[18px]">News & Events</Link>
                         </div>
-                        <div className="flex items-center justify-between space-x-6 col-span-3 h-full">
+                        <div className="flex items-center justify-end gap-2 space-x-6 col-span-5 h-full">
                             <div className="relative h-full flex items-center">
                                 <input type="text" placeholder="Search..." className="bg-white/10 px-4 py-1 text-sm" />
                                 <FaSearch className="absolute right-3 top-1/2 -translate-y-1/2 text-white/70" />
                             </div>
-                            <Link href="/admissions/apply-now" className="hover:text-gray-300 text-[14px] 2xl:text-[18px]">Apply Now</Link>
-                            <Link href="/contact-us" className="hover:text-gray-300 text-[14px] 2xl:text-[18px]">Contact us</Link>
+                            <div className="group inline-block">
+                                <button className="relative px-5 text-[14px] 2xl:text-[18px] py-0.5 bg-[#0072C5] group-hover:bg-[#0072C5] text-white overflow-hidden cursor-pointer transition-colors duration-300">
+                                    Know More
+                                    <span className="absolute top-0 right-0 w-[12px] h-[12px] bg-[#002561] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0" />
+                                    <span className="absolute top-0 right-0 w-0 h-0 border-t-[12px] border-l-[12px] border-t-transparent border-l-[#4b89e8] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
+                                </button>
+                            </div>
+
+                            <Link href="/contact-us">
+                                <div className="group inline-block">
+                                    <button className="relative px-5 py-1 text-[14px] 2xl:text-[18px] bg-[#8772F7] group-hover:bg-[#8772F7] text-white overflow-hidden cursor-pointer transition-colors duration-300">
+                                        Contact us
+                                        <span className="absolute top-0 right-0 w-[12px] h-[12px] bg-[#002561] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0" />
+                                        <span className="absolute top-0 right-0 w-0 h-0 border-t-[12px] border-l-[12px] border-t-transparent border-l-[#4b89e8] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
+                                    </button>
+                                </div>
+                            </Link>
+                            {/* <Link href="/contact-us" className="hover:text-gray-300 text-[14px] 2xl:text-[18px]">Contact us</Link> */}
                         </div>
                     </div>
-                    <div className="lg:px-16 py-2 h-1/2 flex items-center">
+                    <div className="lg:px-16 py-2 h-1/2 flex items-center justify-between">
                         <ul className="space-x-8 flex items-center h-full">
                             {menuItems.map((item, idx) => (
                                 <li key={idx} className="relative group h-full flex items-center"
@@ -194,7 +224,7 @@ const NavBar = () => {
                                                                 {subitem.name}
                                                             </Link>
                                                         ) : (
-                                                            <span className="block px-4 py-2 border-b border-white/20 hover:bg-white/10 text-[14px] flex justify-between items-center">
+                                                            <span className="px-4 py-2 border-b border-white/20 hover:bg-white/10 text-[14px] flex justify-between items-center">
                                                                 {subitem.name} {hasNested && <span>▼</span>}
                                                             </span>
                                                         )}
@@ -216,23 +246,22 @@ const NavBar = () => {
                 {/* Mobile menu icon */}
                 <div className="lg:hidden flex items-center justify-end px-4">
                     <button onClick={() => { setIsMobileMenuOpen(!isMobileMenuOpen); if (!isMobileMenuOpen) setActiveSubmenu(null) }}
-                        className="text-white p-2" aria-label="Toggle mobile menu">
+                        className="text-white p-2 z-50" aria-label="Toggle mobile menu">
                         {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
                     </button>
                 </div>
             </div>
             {/* Mobile Menu */}
             {isMobileMenuOpen && (
-                <div className="fixed inset-0 z-50 flex">
+                <div className="fixed inset-0 z-40 flex">
                     <div className="w-[75%] bg-[#002561] p-4 relative overflow-y-auto">
-                        <button aria-label="Close menu" onClick={() => { setIsMobileMenuOpen(false); setActiveSubmenu(null) }}
-                            className="absolute top-4 right-4 text-white text-2xl p-1 hover:text-gray-300"><FaTimes /></button>
-                        <div className="flex flex-col space-y-2 mb-6">
+
+                        {/* <div className="flex flex-col space-y-2 mb-6">
                             <Link href="/resources" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-lg font-semibold">Resources</Link>
                             <Link href="/news-&-events" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-lg font-semibold">News & Events</Link>
                             <Link href="/admissions/apply-now" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-lg font-semibold">Apply Now</Link>
                             <Link href="/contact-us" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-lg font-semibold">Contact us</Link>
-                        </div>
+                        </div> */}
                         <ul>
                             {menuItems.map((item, idx) => (
                                 <li key={idx} className="border-b border-white/20">
