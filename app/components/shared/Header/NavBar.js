@@ -41,7 +41,7 @@ const menuItems = [
     {
         name: 'Admissions',
         submenu: [
-            { name: 'Apply', slug: 'apply' },
+            { name: 'Apply', slug: 'apply-now' },
             { name: 'Scholarships', slug: 'scholarships' },
             { name: "Bachelor's Program", slug: 'bachelors-programs' },
             { name: "Master's Program", slug: 'masters-programs' },
