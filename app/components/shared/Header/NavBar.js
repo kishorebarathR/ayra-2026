@@ -269,6 +269,7 @@ const NavBar = () => {
     const pathname = usePathname();
     const prevIsScrolled = useRef(false);
     const [transitionStyle, setTransitionStyle] = useState('opacity 1s cubic-bezier(0.4,0,0.2,1), transform 1s cubic-bezier(0.4,0,0.2,1)');
+    const prevScrollY = useRef(0);
 
     useEffect(() => {
         if (typeof window !== 'undefined' && 'scrollRestoration' in window.history) {
@@ -278,7 +279,7 @@ const NavBar = () => {
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
-            window.scrollTo({ top: 10, behavior: 'smooth' });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     }, [pathname]);
 
@@ -290,10 +291,19 @@ const NavBar = () => {
     }, [])
 
     useEffect(() => {
-        const handleScroll = () => setIsScrolled(window.scrollY > 0)
-        window.addEventListener('scroll', handleScroll)
-        return () => window.removeEventListener('scroll', handleScroll)
-    }, [])
+        const handleScroll = () => {
+            const threshold = 10; // 10px
+            const currentScrollY = window.scrollY;
+            if (currentScrollY > threshold && currentScrollY > prevScrollY.current) {
+                setIsScrolled(true);
+            } else if (currentScrollY <= threshold) {
+                setIsScrolled(false);
+            }
+            prevScrollY.current = currentScrollY;
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     useEffect(() => {
         if (isScrolled && !prevIsScrolled.current) {
