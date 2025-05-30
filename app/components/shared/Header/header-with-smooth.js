@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { FaSearch, FaBars, FaTimes } from 'react-icons/fa'
@@ -267,8 +267,6 @@ const NavBar = () => {
     const [isMobile, setIsMobile] = useState(false)
     const [isScrolled, setIsScrolled] = useState(false)
     const pathname = usePathname();
-    const prevIsScrolled = useRef(false);
-    const [transitionStyle, setTransitionStyle] = useState('opacity 1s cubic-bezier(0.4,0,0.2,1), transform 1s cubic-bezier(0.4,0,0.2,1)');
 
     useEffect(() => {
         if (typeof window !== 'undefined' && 'scrollRestoration' in window.history) {
@@ -294,17 +292,6 @@ const NavBar = () => {
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
-
-    useEffect(() => {
-        if (isScrolled && !prevIsScrolled.current) {
-            // Scrolling down: smooth
-            setTransitionStyle('opacity 1s cubic-bezier(0.4,0,0.2,1), transform 1s cubic-bezier(0.4,0,0.2,1)');
-        } else if (!isScrolled && prevIsScrolled.current) {
-            // Scrolling up: instant
-            setTransitionStyle('opacity 0s, transform 0s');
-        }
-        prevIsScrolled.current = isScrolled;
-    }, [isScrolled]);
 
     return (
         <>
@@ -336,7 +323,7 @@ const NavBar = () => {
             <nav
                 className="bg-[#002561] text-white shadow-[0_3px_8px_#0000005C] w-full fixed top-0 left-0 z-50"
                 style={{
-                    transition: transitionStyle,
+                    transition: 'opacity 1s cubic-bezier(0.4,0,0.2,1), transform 1s cubic-bezier(0.4,0,0.2,1)',
                     opacity: isScrolled ? 1 : 0,
                     transform: isScrolled ? 'translateY(0)' : 'translateY(-60px)',
                     pointerEvents: isScrolled ? 'auto' : 'none',
