@@ -91,6 +91,7 @@ const generateHref = (item, parent) => {
     if (parent === 'Distinct for You') return `/distinct-for-you/${item.slug}`
     if (parent === 'Schools') return `/schools/${item.slug}`
     if (parent === 'Centres for Excellence') return `/centres-for-excellence/${item.slug}`
+    if (parent === 'About Us') return `/about-us/${item.slug}`
     // if (parent === 'Admissions') {
     //     if (item.slug === 'bachelors-programs') return '/admissions/bachelors-programs'
     //     if (item.slug === 'masters-programs') return '/admissions/masters-programs'
