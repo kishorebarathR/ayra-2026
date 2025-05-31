@@ -8,7 +8,7 @@ const Banner = () => {
     useEffect(() => {
         const handleResize = () => {
             setIsMobile(window.innerWidth < 640);
-        };
+        }; 
 
         // Initial check
         handleResize();
