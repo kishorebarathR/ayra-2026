@@ -15,7 +15,7 @@ const StudentOutcome = () => {
                 </p>
 
                 <div>
-                    <h3 className="font-semibold text-xl mb-4">Typical Outcomes Include:</h3>
+                    <h3 className="font-semibold text-3xl mb-4">Typical Outcomes Include:</h3>
                     <ul className="space-y-3 text-gray-700">
                         {[
                             "Full-time job offers through on-campus drives",

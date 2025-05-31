@@ -10,7 +10,7 @@ const ConditionsForScholarship = () => {
                 <div className='container mx-auto flex flex-col items-center border-r-2 border-l-2 border-dashed border-[#A9B8D5] py-10'>
                     {/* Top Image Section */}
                     <div className="w-full py-8 flex justify-center">
-                        <div className="relative w-full max-w-[700px] h-[300px]">
+                        <div className="relative w-full max-w-[900px] h-[400px]">
                             <Image
                                 src="/admissions/scholarship/conditions_for_scholarship.png"
                                 alt="conditions for scholarship"

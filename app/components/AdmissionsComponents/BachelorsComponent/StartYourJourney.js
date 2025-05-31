@@ -25,11 +25,11 @@ const StartYourJourney = () => {
                         AYRA’s Bachelor’s programs are built to give you the space, support, and structure to grow—intellectually, personally, and professionally.
                     </p>
                     {/* <HoverButton5 text="Know More" /> */}
-                    <div className="flex flex-wrap justify-center gap-4">
+                    {/* <div className="flex flex-wrap justify-center gap-4">
                         <div className="border border-dashed border-gray-300 bg-white px-6 py-1 text-[#2050B1]">
                             Know More
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </>

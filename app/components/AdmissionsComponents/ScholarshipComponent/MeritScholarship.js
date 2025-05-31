@@ -5,17 +5,22 @@ const Meritscholarship = () => {
   return (
     <>
       {/* Text and first image container */}
-      <div className="w-full flex flex-col items-center bg-gray-100 md:px-0 ">
-        <div className='container mx-auto flex flex-col items-center border-r-2 border-l-2 border-dashed border-[#A9B8D5] py-10 px-4'>
-          <div className="relative w-full max-w-[800px] h-[200px]">
+      <div className="w-full flex flex-col items-center bg-gray-100 md:px-0">
+        <div className="container mx-auto flex flex-col items-center border-r-2 border-l-2 border-dashed border-[#A9B8D5] py-10 px-4">
+
+          {/* Full width image */}
+          <div className="w-full">
             <Image
               src="/admissions/scholarship/merit_scholarship.png"
               alt="merit-scholarship"
-              fill
-              className="object-contain mt-4"
+              width={1200}
+              height={400}
+              className="w-full h-auto object-contain mt-4 px-20"
               priority
             />
           </div>
+
+          {/* Paragraph */}
           <div className="w-full max-w-[800px] px-4 text-center pt-5">
             <p>
               A number of merit-based scholarships are awarded to the applicants at the time of admissions.
@@ -26,8 +31,9 @@ const Meritscholarship = () => {
         </div>
       </div>
 
+
       {/* Second image with full width blue background */}
-      <div className="w-full bg-[#002561] flex justify-center">
+      {/* <div className="w-full bg-[#002561] flex justify-center">
         <div className='container mx-auto flex flex-col items-center border-r-2 border-l-2 border-dashed border-[#A9B8D5] py-10'>
 
           <div className="relative w-full max-w-[700px] h-[300px] ">
@@ -40,7 +46,7 @@ const Meritscholarship = () => {
             />
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   )
 }

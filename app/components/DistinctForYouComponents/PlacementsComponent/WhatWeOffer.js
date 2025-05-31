@@ -34,7 +34,7 @@ const WhatWeOffer = () => {
                             key={index}
                             className="flex flex-col gap-4 border-r border-dashed border-gray-300 md:last:border-r-0 pr-4"
                         >
-                            <h3 className="text-[#2050B1] text-2xl font-semibold leading-snug">
+                            <h3 className="text-xl md:text-2xl text-[#2050B1] font-tthoves-bold">
                                 {item.title.split('/n').map((line, i) => (
                                     <span key={i}>
                                         {line}
