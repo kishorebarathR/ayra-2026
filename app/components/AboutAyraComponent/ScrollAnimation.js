@@ -112,8 +112,8 @@ const TextSection = () => {
         className="sticky top-0 h-[100vh] flex flex-col md:flex-row bg-white transition-opacity duration-500"
       >
         {/* Left Panel */}
-        <div className="w-full md:w-1/2 flex justify-center items-center px-4 md:px-6 h-[20vh] md:h-screen md:sticky md:top-0 bg-white pt-10">
-          <h2 className="text-6xl md:text-8xl font-schabo text-[#2050B1] leading-tight uppercase text-center md:text-start">
+        <div className="w-full md:w-1/2 flex justify-center items-center px-4 md:px-6 h-[100vh] bg-white">
+          <h2 className="text-5xl sm:text-6xl md:text-8xl font-schabo text-[#2050B1] leading-tight uppercase text-center md:text-start">
             What Sets Us
             <br />
             Apart
@@ -121,8 +121,8 @@ const TextSection = () => {
         </div>
 
         {/* Right Panel */}
-        <div className="w-full md:w-1/2 h-[50vh] md:h-screen overflow-hidden relative">
-          <div className="h-full w-full">
+        <div className="w-full md:w-1/2 h-[100vh] overflow-hidden relative flex items-center justify-center">
+          <div className="relative w-full h-full">
             {blocks.map((block, index) => (
               <div
                 key={index}
@@ -137,8 +137,8 @@ const TextSection = () => {
                 }}
               >
                 {block.type === 'text' ? (
-                  <div className="max-w-xl px-4 md:px-0">
-                    <h3 className="text-lg sm:text-xl md:text-2xl font-ebold text-[#2050B1] mb-2 md:mb-4 uppercase">
+                  <div className="max-w-xl px-4 md:px-0 text-center md:text-left">
+                    <h3 className="text-lg sm:text-xl md:text-2xl text-[#2050B1] font-tthoves-bold mb-2 md:mb-4 uppercase">
                       {block.title}
                     </h3>
                     <p className="text-sm sm:text-base md:text-lg text-gray-700">{block.text}</p>
@@ -147,7 +147,7 @@ const TextSection = () => {
                   <img
                     src={block.src}
                     alt={block.alt}
-                    className="w-full h-auto max-h-[40vh] md:max-h-[80vh] shadow-lg px-4 md:px-0"
+                    className="w-full h-auto max-h-[40vh] md:max-h-[80vh] shadow-lg px-4 md:px-0 object-contain"
                   />
                 )}
               </div>
