@@ -4,7 +4,7 @@ const DFYBanner = () => {
     <>
       <div className="relative h-[100vh] md:h-[90vh] w-full ">
         <div className="absolute inset-0 bg-cover  md:bg-[url('/overview/distinct_banner.png')] bg-[url('/overview/Mobile-Banner.png')]">
-          <div className="absolute top-[70%] md:top-[49%] px-3 md:px-0 my-14 md:my-0 md:left-[2%]">
+          <div className="absolute top-[70%] md:top-[49%] px-3 md:px-[4.7%] my-14 md:my-0 md:left-[2%]">
             <p className="text-white text-xs md:text-base leading-relaxed md:max-w-md font-tthoves-extralight">
               At AYRA, education isn’t predefined. It’s shaped by your
               ambitions, your pace, and your vision for the future. Whether you
@@ -24,3 +24,6 @@ const DFYBanner = () => {
 }
 
 export default DFYBanner
+
+
+
