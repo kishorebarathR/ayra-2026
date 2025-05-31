@@ -1,37 +1,40 @@
-import React from "react"
-import Image from "next/image"
+
+
+'use client';
+import Image from 'next/image';
+import React, { useEffect, useState } from 'react';
 
 const Banner = () => {
-  return (
-    <>
-      <div
-        className=" h-[100vh] lg:h-[90vh] bg-cover bg-center text-white relative 
-  bg-[url('/opencanvas/opc-mob-pace.png')] 
-  md:bg-[url('/opencanvas/opc-banner02-pace.jpg')]"
-      >
-        {/* Centered paragraph at bottom */}
-        <div className="absolute bottom-6 md:bottom-24 text-center px-4 w-full md:w-1/2 left-1/2 lg:left-[25%] transform -translate-x-1/2">
-          <p className="text-sm md:text-base font-light text-start w-full md:w-2/3 mx-auto opacity-90">
-            At AYRA, learning isn’t one-size-fits-all. Whether you prefer
-            structured coursework, <p className="mb-0"></p>self-directed exploration, or hands-on
-            experiences, you’ll find a rhythm that works for you.
-          </p>
-        </div>
-      </div>
+    const [isMobile, setIsMobile] = useState(false);
 
-      <div className="bg-[url('/opencanvas/opc-bg-img.png')] bg-cover bg-center relative px-4 sm:px-10 md:px-16 lg:px-20 border-b-2 border-dotted border-gray-400">
-        <div className="container mx-auto w-full h-full  pt-10 pb-10">
-          <Image
-            src="/opencanvas/opc-img-boat.png"
-            alt="Next Section"
-            width={1500}
-            height={1000}
-            className="lg:w-full  lg:h-full w-[100vh] h-[15vh] "
-          />
-        </div>
-      </div>
-    </>
-  )
-}
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 640);
+        }; 
 
-export default Banner
+        // Initial check
+        handleResize();
+
+        // Listen to resize events
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const imageSrc = isMobile
+        ? '/opencanvas/your_pace_mob_banner.png'
+        : '/opencanvas/your_pace_banner.png';
+
+    return (
+        <div className="relative w-full h-[100vh] md:h-[90vh] bg-[#2050B2]">
+            <Image
+                src={imageSrc}
+                alt="Bachelor Program Banner"
+                fill
+                className="object-cover object-center"
+                priority
+            />
+        </div>
+    );
+};
+
+export default Banner;
