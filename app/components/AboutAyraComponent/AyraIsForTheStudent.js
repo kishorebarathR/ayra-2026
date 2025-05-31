@@ -28,12 +28,13 @@ const AyraIsForTheStudent = () => {
         <div className='bg-[#2050B1] py-6 md:py-10 md:px-0 px-4'>
             {/* Text and first image container */}
             <div className="w-full flex flex-col items-center">
-                <div className="relative w-full max-w-[900px] h-[120px] md:h-[200px]">
+                <div className="relative w-full max-w-[750px] mx-auto">
                     <Image
                         src="/admissions/about/ayra_is_for_the_student_who.png"
                         alt="merit-scholarship"
-                        fill
-                        className="object-contain mt-2 md:mt-4"
+                        width={1000}
+                        height={300} // or adjust to your preferred size
+                        className="object-contain mt-2 md:mt-4 w-full"
                         priority
                     />
                 </div>
@@ -54,7 +55,7 @@ const AyraIsForTheStudent = () => {
                                         className="object-contain rotate-[50deg]"
                                     />
                                 </div>
-                                <span className="text-2xl md:text-5xl font-light ml-1">
+                                <span className="text-2xl md:text-4xl font-light ml-1">
                                     {slide}
                                 </span>
                             </div>
