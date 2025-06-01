@@ -1,5 +1,5 @@
 import React from 'react'
-import BachelorsComponent from '@/app/components/AdmissionsComponents/BachelorsComponent/'
+import BachelorsComponent from '../../components/AdmissionsComponents/BachelorsComponent/'
 const page = () => {
   return (
     <div>

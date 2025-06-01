@@ -1,5 +1,5 @@
 import React from 'react'
-import PlacementsComponent from '@/app/components/DistinctForYouComponents/PlacementsComponent' 
+import PlacementsComponent from '../../components/DistinctForYouComponents/PlacementsComponent' 
 
 const page = () => {
   return (

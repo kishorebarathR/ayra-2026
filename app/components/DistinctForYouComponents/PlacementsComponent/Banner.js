@@ -23,12 +23,12 @@ const Banner = () => {
         : '/admissions/placements/placements_banner.png';
 
     return (
-        <div className="relative w-full h-[90vh]">
+        <div className="relative w-full h-[100vh] md:h-[90vh] bg-[#002560]">
             <Image
                 src={imageSrc}
                 alt="Placements Program Banner"
                 fill
-                className="object-cover object-center"
+                className="px-6"
                 priority
             />
         </div>

@@ -23,13 +23,13 @@ const Banner = () => {
         : '/admissions/bachelors_programs/bachelor_banner.png';
 
     return (
-        <div className="relative w-full h-[100vh] md:h-[90vh] bg-[#2050B2]">
+        <div className="relative w-full h-[100vh] md:h-[90vh] bg-[#002560]">
 
             <Image
                 src={imageSrc}
                 alt="Bachelor Program Banner"
                 fill
-                className="object-cover object-center"
+                className="px-6"
                 priority
             />
         </div>

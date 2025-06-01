@@ -28,7 +28,7 @@ const Banner = () => {
                 src={imageSrc}
                 alt="Bachelor Program Banner"
                 fill
-                className="object-cover object-center"
+                className="px-6"
                 priority
             />
         </div>

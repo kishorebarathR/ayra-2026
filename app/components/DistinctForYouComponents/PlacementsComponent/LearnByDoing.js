@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { HoverButton5 } from '@/app/utils/HoverButton';
+// import { HoverButton5 } from '@/app/utils/HoverButton';
 
 
 const ExploreAyra = () => {
