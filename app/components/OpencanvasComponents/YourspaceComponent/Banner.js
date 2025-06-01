@@ -19,8 +19,8 @@ const Banner = () => {
     }, []);
 
     const imageSrc = isMobile
-        ? '/opencanvas/new_your_space_mob_banner.png'
-        : '/opencanvas/new_your_space_banner.png';
+        ? '/opencanvas/Banner-mobile-space-01.png'
+        : '/opencanvas/Banner-Img-Space-01.png';
 
     return (
         <div className="relative w-full h-[100vh] md:h-[90vh] bg-[#2050B2]">
