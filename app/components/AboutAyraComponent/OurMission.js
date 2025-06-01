@@ -53,9 +53,9 @@ const OurMission = () => {
                         <Image
                             src="/admissions/about/our_mission.png"
                             alt="Our Mission"
-                            width={500}
+                            width={200}
                             height={300}
-                            className="w-56 md:w-[65%] h-auto"
+                            className="w-56 md:w-[70%] h-auto"
                         />
                     </div>
                     <div className="w-full md:w-1/2 lg:w-3/5 space-y-6 md:space-y-8 font-light">

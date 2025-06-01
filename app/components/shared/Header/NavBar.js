@@ -119,13 +119,26 @@ const RenderSubmenu = ({ items, level = 0, parentKey = '', parentName, isMobile,
                 <button onClick={() => isMobile && setActiveSubmenu(activeSubmenu === key ? null : key)}
                     className="w-full text-left px-4 py-2 hover:bg-white/10 flex items-center justify-between">
                     {item.name}
-                    {item.submenu?.length > 0 && <span className={`transform ${activeSubmenu === key ? 'rotate-180' : ''}`}>▼</span>}
+                    {item.submenu?.length > 0 && (
+                        <span className={`transform transition-transform duration-200 ${activeSubmenu === key ? 'rotate-180' : ''}`}>
+                            <MdKeyboardArrowRight className={`${activeSubmenu === key ? 'rotate-90' : ''}`} />
+                        </span>
+                    )}
                 </button>
-                {item.submenu?.length > 0 && isMobile && activeSubmenu === key &&
-                    <div className="bg-[#002561] pl-4">
-                        <RenderSubmenu {...{ items: item.submenu, level: level + 1, parentKey: key, parentName: item.name, isMobile, activeSubmenu, setActiveSubmenu, setIsMobileMenuOpen }} />
+                {item.submenu?.length > 0 && isMobile && activeSubmenu === key && (
+                    <div className={`bg-[#003070] pl-4`}>
+                        <RenderSubmenu
+                            items={item.submenu}
+                            level={level + 1}
+                            parentKey={key}
+                            parentName={item.name}
+                            isMobile={isMobile}
+                            activeSubmenu={activeSubmenu}
+                            setActiveSubmenu={setActiveSubmenu}
+                            setIsMobileMenuOpen={setIsMobileMenuOpen}
+                        />
                     </div>
-                }
+                )}
             </div>
         )
     })
@@ -140,6 +153,8 @@ const NavBarContent = ({
     setHoveredSubmenu,
     activeSubmenu,
     setActiveSubmenu,
+    activeNestedSubmenu,
+    setActiveNestedSubmenu,
     isMobileMenuOpen,
     setIsMobileMenuOpen,
     isMobile,
@@ -235,8 +250,13 @@ const NavBarContent = ({
                     <ul>
                         {menuItems.map((item, idx) => (
                             <li key={idx} className="border-b border-white/20">
-                                <button onClick={() => setActiveSubmenu(activeSubmenu === `${idx}` ? null : `${idx}`)}
-                                    className="w-full flex justify-between items-center text-white px-4 py-3 text-lg font-semibold">
+                                <button
+                                    onClick={() => {
+                                        setActiveSubmenu(activeSubmenu === `${idx}` ? null : `${idx}`);
+                                        setActiveNestedSubmenu(null);
+                                    }}
+                                    className="w-full flex justify-between items-center text-white px-4 py-3 text-lg font-semibold"
+                                >
                                     {item.name}
                                     {item.submenu?.length > 0 && (
                                         <span>{activeSubmenu === `${idx}` ? <MdKeyboardArrowUp size={24} /> : <MdKeyboardArrowRight size={24} />}</span>
@@ -244,16 +264,76 @@ const NavBarContent = ({
                                 </button>
                                 {activeSubmenu === `${idx}` && (
                                     <div className="pl-4 bg-[#003070]">
-                                        <RenderSubmenu items={item.submenu} parentKey={`${idx}`} parentName={item.name}
-                                            isMobile={true} activeSubmenu={activeSubmenu} setActiveSubmenu={setActiveSubmenu} setIsMobileMenuOpen={setIsMobileMenuOpen} />
+                                        {item.submenu.map((subitem, subIdx) => (
+                                            <div key={`${idx}-${subIdx}`} className="border-b border-white/20">
+                                                {subitem.submenu ? (
+                                                    <>
+                                                        <button
+                                                            onClick={() => {
+                                                                setActiveNestedSubmenu(
+                                                                    activeNestedSubmenu === `${idx}-${subIdx}`
+                                                                        ? null
+                                                                        : `${idx}-${subIdx}`
+                                                                );
+                                                            }}
+                                                            className="w-full flex justify-between items-center text-white px-4 py-2 text-[14px]"
+                                                        >
+                                                            {subitem.name}
+                                                            <span>
+                                                                {activeNestedSubmenu === `${idx}-${subIdx}` ?
+                                                                    <MdKeyboardArrowUp size={20} /> :
+                                                                    <MdKeyboardArrowRight size={20} />
+                                                                }
+                                                            </span>
+                                                        </button>
+                                                        {activeNestedSubmenu === `${idx}-${subIdx}` && (
+                                                            <div className="pl-4 bg-[#003f8c]">
+                                                                {subitem.submenu.map((nestedItem, nestedIdx) => (
+                                                                    <Link
+                                                                        key={`${idx}-${subIdx}-${nestedIdx}`}
+                                                                        href={generateHref(nestedItem, subitem.name)}
+                                                                        className="block px-4 py-2 border-b border-white/20 hover:bg-white/10 text-[14px]"
+                                                                        onClick={() => {
+                                                                            setIsMobileMenuOpen(false);
+                                                                            setActiveSubmenu(null);
+                                                                            setActiveNestedSubmenu(null);
+                                                                        }}
+                                                                    >
+                                                                        {nestedItem.name}
+                                                                    </Link>
+                                                                ))}
+                                                            </div>
+                                                        )}
+                                                    </>
+                                                ) : (
+                                                    <Link
+                                                        href={generateHref(subitem, item.name)}
+                                                        className="block px-4 py-2 border-b border-white/20 hover:bg-white/10 text-[14px]"
+                                                        onClick={() => {
+                                                            setIsMobileMenuOpen(false);
+                                                            setActiveSubmenu(null);
+                                                            setActiveNestedSubmenu(null);
+                                                        }}
+                                                    >
+                                                        {subitem.name}
+                                                    </Link>
+                                                )}
+                                            </div>
+                                        ))}
                                     </div>
                                 )}
                             </li>
                         ))}
                     </ul>
                 </div>
-                <div className="w-[25%] bg-black bg-opacity-50 cursor-pointer"
-                    onClick={() => { setIsMobileMenuOpen(false); setActiveSubmenu(null) }} />
+                <div
+                    className="w-[25%] bg-black bg-opacity-50 cursor-pointer"
+                    onClick={() => {
+                        setIsMobileMenuOpen(false);
+                        setActiveSubmenu(null);
+                        setActiveNestedSubmenu(null);
+                    }}
+                />
             </div>
         )}
     </>
@@ -263,6 +343,7 @@ const NavBar = () => {
     const [hoveredMenu, setHoveredMenu] = useState(null)
     const [hoveredSubmenu, setHoveredSubmenu] = useState(null)
     const [activeSubmenu, setActiveSubmenu] = useState(null)
+    const [activeNestedSubmenu, setActiveNestedSubmenu] = useState(null)
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
     const [isMobile, setIsMobile] = useState(false)
     const [isScrolled, setIsScrolled] = useState(false)
@@ -336,6 +417,8 @@ const NavBar = () => {
                     setHoveredSubmenu={setHoveredSubmenu}
                     activeSubmenu={activeSubmenu}
                     setActiveSubmenu={setActiveSubmenu}
+                    activeNestedSubmenu={activeNestedSubmenu}
+                    setActiveNestedSubmenu={setActiveNestedSubmenu}
                     isMobileMenuOpen={isMobileMenuOpen}
                     setIsMobileMenuOpen={setIsMobileMenuOpen}
                     isMobile={isMobile}
@@ -360,6 +443,8 @@ const NavBar = () => {
                     setHoveredSubmenu={setHoveredSubmenu}
                     activeSubmenu={activeSubmenu}
                     setActiveSubmenu={setActiveSubmenu}
+                    activeNestedSubmenu={activeNestedSubmenu}
+                    setActiveNestedSubmenu={setActiveNestedSubmenu}
                     isMobileMenuOpen={isMobileMenuOpen}
                     setIsMobileMenuOpen={setIsMobileMenuOpen}
                     isMobile={isMobile}
