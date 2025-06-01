@@ -21,8 +21,8 @@ const Banner = () => {
     }, []);
 
     const imageSrc = isMobile
-        ? '/opencanvas/your_pace_mob_banner.png'
-        : '/opencanvas/your_pace_banner.png';
+        ? '/opencanvas/Banner-mobile-pace-02.png'
+        : '/opencanvas/Banner-Img-pace-02.png';
 
     return (
         <div className="relative w-full h-[100vh] md:h-[90vh] bg-[#2050B2]">
