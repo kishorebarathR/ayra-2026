@@ -18,7 +18,7 @@ const WhatWeOffer = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-full py-4 px-8">
+            <div className="w-full py-4 md:px-8 px-4">
                 <Image
                     src="/admissions/placements/team_img.png"
                     alt="merit-scholarship"

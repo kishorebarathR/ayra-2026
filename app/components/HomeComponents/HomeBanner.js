@@ -1,36 +1,33 @@
 'use client';
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 const Banner = () => {
-    const [isMobile, setIsMobile] = useState(false);
-
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth < 640);
-        }; 
-
-        // Initial check
-        handleResize();
-
-        // Listen to resize events
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-
-    const imageSrc = isMobile
-        ? '/home/new/new_home_mob_banner.png'
-        : '/home/new/new_home_banner.png';
-
     return (
-        <div className="relative w-full h-[90vh] bg-[#2050B2]">
-            <Image
-                src={imageSrc}
-                alt="Bachelor Program Banner"
-                fill
-                className="object-cover object-center"
-                priority
-            />
+        <div className="relative w-full bg-[#2050B2]">
+            {/* Desktop Image */}
+            <div className="hidden md:block w-full">
+                <Image
+                    src="/home/new/new_home_banner.png"
+                    alt="Bachelor Program Desktop Banner"
+                    width={1920}
+                    height={1080}
+                    className="object-cover object-center w-full h-auto"
+                    priority
+                />
+            </div>
+
+            {/* Mobile Image */}
+            <div className="block md:hidden w-full">
+                <Image
+                    src="/home/new/new_home_mob_banner.png"
+                    alt="Bachelor Program Mobile Banner"
+                    width={800}
+                    height={1000} // adjust as per your actual image ratio
+                    className="object-cover object-center w-full h-auto"
+                    priority
+                />
+            </div>
         </div>
     );
 };

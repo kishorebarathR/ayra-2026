@@ -10,7 +10,7 @@ const AcademicAchievements = () => {
         <div className="container mx-auto">
           <div className="flex flex-col lg:flex-row md:gap-60 container mx-auto">
             {/* Left Content */}
-            <div className="w-full lg:w-3/5 space-y-10 py-20">
+            <div className="w-full lg:w-3/5 space-y-10 md:py-20 py-10">
 
               {/* Academic Section */}
               <div>
@@ -57,7 +57,7 @@ const AcademicAchievements = () => {
             </div>
 
             {/* Right Images */}
-            <div className="lg:w-[28%] flex flex-col items-end">
+            <div className="lg:w-[28%] flex flex-col items-end hidden md:block">
               {achievementImages.map((src, index) => {
                 const isFirst = index === 0;
                 const isLast = index === achievementImages.length - 1;

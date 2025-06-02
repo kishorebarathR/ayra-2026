@@ -23,7 +23,7 @@ const ExploreAyra = () => {
         : '/admissions/placements/learn_by_doing.png';
 
     return (
-        <div className="relative w-full h-[70vh] container mx-auto my-10 ">
+        <div className="relative w-full md:h-[70vh] h-[100vh] container mx-auto md:my-10 my-0 bg-[#2050B2]">
             {/* Background Image */}
             <Image
                 src={imageSrc}
@@ -36,7 +36,7 @@ const ExploreAyra = () => {
             {/* Overlay Content */}
             <div className="absolute inset-0 top-48 md:right-50 right-10 flex justify-end md:items-center items-end p-4">
                 <div className="text-white md:max-w-[30%] w-full">
-                    <div className="md:space-y-5">
+                    <div className="md:space-y-5 pb-10 md:pb-0">
                         <p className="text-sm font-light text-white font-tthoves-extralight">
                             AYRA was founded with a bold vision: to be an open canvas where curiosity meets possibility.
                             At AYRA, we don't just prepare — we empower them to shape it.

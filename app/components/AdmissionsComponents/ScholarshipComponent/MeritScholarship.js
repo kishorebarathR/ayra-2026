@@ -15,13 +15,13 @@ const Meritscholarship = () => {
               alt="merit-scholarship"
               width={1200}
               height={400}
-              className="w-full h-auto object-contain mt-4 px-20"
+              className="w-full h-auto object-contain mt-4 md:px-20 px-4"
               priority
             />
           </div>
 
           {/* Paragraph */}
-          <div className="w-full max-w-[800px] px-4 text-center pt-5">
+          <div className="w-full max-w-[800px] md:px-4 text-center pt-5">
             <p>
               A number of merit-based scholarships are awarded to the applicants at the time of admissions.
               The scholarship may range from partial to full fee waivers. The amount of scholarship awarded

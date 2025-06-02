@@ -1,6 +1,7 @@
 'use client';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
+import Breadcrumbs from '../../../utils/Breadcrumbs'
 
 const Banner = () => {
     const [isMobile, setIsMobile] = useState(false);
@@ -23,15 +24,23 @@ const Banner = () => {
         : '/admissions/placements/placements_banner.png';
 
     return (
-        <div className="relative w-full h-[100vh] md:h-[90vh] bg-[#002560]">
-            <Image
-                src={imageSrc}
-                alt="Placements Program Banner"
-                fill
-                className="px-6"
-                priority
-            />
-        </div>
+        <>
+            <div className="relative w-full h-[100vh] md:h-[90vh] bg-[#002560]">
+                <Image
+                    src={imageSrc}
+                    alt="Placements Program Banner"
+                    fill
+                    className="px-6"
+                    priority
+                />
+            </div>
+            <div className='container mx-auto md:px-0 px-4'>
+                <Breadcrumbs items={[
+                    { label: 'Home', href: '/' },
+                    { label: 'Placements and Internships', href: '/distinct-for-you/placements-internship' },
+                ]} />
+            </div>
+        </>
     );
 };
 

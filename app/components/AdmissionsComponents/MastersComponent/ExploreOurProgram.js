@@ -34,10 +34,10 @@ const ExploreOurProgram = () => {
               key={index}
               className="bg-[#0098FF] hover:bg-[#9964FF] transition-colors duration-300 text-white p-6 shadow-md cursor-pointer"
             >
-              <h3 className="text-xl font-bold mb-2 border-b border-dashed border-white pb-2 min-h-10">
+              <h3 className="text-2xl font-bold pb-4 mb-4 border-b border-dashed border-white pb-2 min-h-10">
                 {program.title}
               </h3>
-              <p className="mb-4 text-sm">{program.description}</p>
+              <p className="mb-4 text-sm min-h-14">{program.description}</p>
               <Image
                 src={program.image}
                 alt={program.title}
