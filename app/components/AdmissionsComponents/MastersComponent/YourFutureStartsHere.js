@@ -6,13 +6,13 @@ import { futureStartContent } from '../../../utils/AdmissionData/masterProgramDa
 
 const YourFutureStartsHere = () => {
   return (
-    <section className="w-full py-16">
-      <div className="container mx-auto px-4">
+    <section className="w-full md:py-16 py-6">
+      <div className="container mx-auto px-4 md:px-0">
         {futureStartContent.map((item, index) => (
           <div key={index}>
             {/* Text Content */}
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
-              <h1 className="text-4xl md:text-7xl font-schabo text-[#002D72] md:w-1/2 whitespace-pre-line">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center md:mb-12 mb-6">
+              <h1 className="text-6xl md:text-7xl font-schabo text-[#002D72] md:w-1/2 whitespace-pre-line">
                 {item.title}
               </h1>
               <p className="md:w-1/2 text-gray-600 mt-6 md:mt-0 text-base md:text-lg leading-relaxed">

@@ -6,7 +6,7 @@ import React from "react";
 const cardData = [
   {
     bgColor: "bg-white",
-    image: "/home/an-open-canvas.svg",
+    image: "/home/an-open-canvas.png",
     title: (
       <>
         AN OPEN CANVAS
@@ -23,7 +23,7 @@ const cardData = [
   },
   {
     bgColor: "bg-[#F1F1F2]",
-    image: "/home/distinct-for-you.svg",
+    image: "/home/distinct-for-you.png",
     title: "DISTINCT FOR YOU",
     description:
       "A university experience built around your goals, your passions, and your ambitions.",
@@ -61,19 +61,19 @@ const CardSection = () => {
               {cardData.map((card, index) => (
                 <div
                   key={index}
-                  className={`relative ${card.bgColor} flex flex-col items-start justify-start p-6 lg:gap-8 gap-4 border border-[#D0E3FF] mx-auto curved-shadow`}
+                  className={`relative ${card.bgColor} flex flex-col items-start justify-start p-6 lg:gap-6 gap-4 border border-[#D0E3FF] mx-auto curved-shadow`}
                 >
-                  <div className="lg:h-64">
+                  <div className="lg:h-64 flex justify-center items-center mx-auto">
                     <Image src={card.image} width={180} height={180} alt="icon" />
                   </div>
 
                   <div>
-                    <h2 className="font-bold text-[#002561] text-[60px] font-schabo">
+                    <h2 className=" text-[#002561] md:text-[70px] text-[50px] font-schabo">
                       {card.title}
                     </h2>
                   </div>
 
-                  <div className="lg:h-20">
+                  <div className="lg:h-16">
                     <p >{card.description}</p>
                   </div>
                   <p >

@@ -15,30 +15,30 @@ const TextSection = () => {
 
   const blocks = [
     {
-      type: 'text',
+      isText: true,
       title: 'THE OPEN CANVAS PHILOSOPHY',
-      text: "At AYRA, students co-create their journey. Whether they want to move faster or slower, specialise or stay broad, we support them in building an education that reflects who they are and who they want to become.",
+      content: "At AYRA, students co-create their journey. Whether they want to move faster or slower, specialise or stay broad, we support them in building an education that reflects who they are and who they want to become."
     },
     {
-      type: 'image',
-      src: '/admissions/masters_programs/what_set_us.png',
-      alt: 'Future Ready',
+      isText: false,
+      image: '/admissions/masters_programs/what_set_us.png',
+      alt: 'Future Ready'
     },
     {
-      type: 'text',
+      isText: true,
       title: 'Designed Around You',
-      text: 'From flexible academic structures to a diverse ecosystem of learning and mentorship, every aspect of Ayra has been built around the evolving needs of young people today.',
+      content: 'From flexible academic structures to a diverse ecosystem of learning and mentorship, every aspect of Ayra has been built around the evolving needs of young people today.'
     },
     {
-      type: 'image',
-      src: '/admissions/masters_programs/what_set_us_1.png',
-      alt: 'Designed Around You',
+      isText: false,
+      image: '/admissions/masters_programs/what_set_us_1.png',
+      alt: 'Designed Around You'
     },
     {
-      type: 'text',
+      isText: true,
       title: 'Future-Ready Curriculum',
-      text: "With a strong foundation in liberal arts, technology, business, hospitality, and sports sciences, our academic offerings are designed to meet the demands of tomorrow's world - while fostering curiosity, creativity, and critical thought.",
-    },
+      content: "With a strong foundation in liberal arts, technology, business, hospitality, and sports sciences, our academic offerings are designed to meet the demands of tomorrow's world - while fostering curiosity, creativity, and critical thought."
+    }
   ];
 
   // Track scroll to enable/disable internal lock
@@ -140,14 +140,14 @@ const TextSection = () => {
   }, [blocks.length]);
 
   return (
-    <div ref={trackRef} style={{ height: `${blocks.length * 100}vh` }} className="relative">
-      <div
+    <div ref={trackRef} style={{ height: `${blocks.length * 100}vh` }} className="relative hidden md:block">
+      <div  
         ref={sectionRef}
         className="sticky top-0 h-[100vh] flex flex-col md:flex-row bg-white transition-opacity duration-500"
       >
         {/* Left Panel */}
         <div className="w-full md:w-1/2 flex justify-center md:items-center items-end px-4 md:px-6 h-[50vh] md:h-[100vh] bg-white">
-          <h2 className="text-5xl sm:text-6xl md:text-8xl font-schabo text-[#2050B1] leading-tight uppercase text-center md:text-start">
+          <h2 className="text-6xl md:text-8xl font-schabo text-[#2050B1] leading-tight uppercase text-center md:text-start">
             What Sets Us
             <br />
             Apart
@@ -173,20 +173,18 @@ const TextSection = () => {
                   zIndex: index === currentSlide ? 1 : 0,
                 }}
               >
-                {block.type === 'text' ? (
-                  <div className={`max-w-xl px-4 md:px-0 text-center md:text-left transition-opacity duration-700 ${index === currentSlide ? 'opacity-100' : 'opacity-0'
-                    }`}>
-                    <h3 className="text-lg sm:text-xl md:text-2xl text-[#2050B1] font-tthoves-bold mb-2 md:mb-4 uppercase">
+                {block.isText ? (
+                  <div className={`max-w-xl px-4 md:px-0 text-center md:text-left transition-opacity duration-700 ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}>
+                    <h3 className="text-xl md:text-2xl text-[#2050B1] font-tthoves-bold mb-2 md:mb-4 uppercase">
                       {block.title}
                     </h3>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-700">{block.text}</p>
+                    <p className="text-sm sm:text-base md:text-lg text-gray-700">{block.content}</p>
                   </div>
                 ) : (
                   <img
-                    src={block.src}
+                    src={block.image}
                     alt={block.alt}
-                    className={`w-full h-auto max-h-[40vh] md:max-h-[80vh] shadow-lg px-4 md:px-0 object-contain transition-opacity duration-700 ${index === currentSlide ? 'opacity-100' : 'opacity-0'
-                      }`}
+                    className={`w-full h-auto max-h-[40vh] md:max-h-[80vh] shadow-lg px-4 md:px-0 object-contain transition-opacity duration-700 ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
                   />
                 )}
               </div>

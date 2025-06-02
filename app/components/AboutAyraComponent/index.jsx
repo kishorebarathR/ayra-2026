@@ -3,12 +3,14 @@ import Banner from './Banner'
 import OurMission from './OurMission'
 import ScrollAnimation from './ScrollAnimation'
 import AyraIsForTheStudent from './AyraIsForTheStudent'
+import ScrollSectionMobile from './ScrollSectionMobile'
 const index = () => {
   return (
     <div>
         <Banner />
         <OurMission />
         <ScrollAnimation />
+        <ScrollSectionMobile />
         <AyraIsForTheStudent />
     </div>
   )
