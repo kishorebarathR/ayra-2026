@@ -5,7 +5,7 @@ const ComingSoon = () => {
     <>
       <div className="container mx-auto">
         {/* Coming soon image below banner  MobileBanner.png */}
-        <div className="flex justify-center items-center md:px-4 md:py-4 py-10">
+        <div className="flex justify-center items-center  md:px-3 md:pb-2 pb-5">
           <Image
             src="/schools/sports-and-sciences/coming_soon.png"
             alt="School of Business Banner"

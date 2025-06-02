@@ -3,16 +3,16 @@ import Image from "next/image"
 const FutureOfEducation = () => {
   return (
     <>
-      <div className="container mx-auto py-10">
+      <div className="container mx-auto md:pt-8 md:pb-10 pt-0">
         {/* Flex items */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 ">
-          <div className="z-10 ">
-            <p className="text-6xl md:text-7xl tracking-wide text-[#002561] font-schabo leading-tight text-center md:text-left">
+          <div className="z-10 md:px-0 px-4 md:mb-0">
+            <p className="text-5xl md:text-7xl tracking-wide text-[#002561] font-schabo leading-tight text-center md:text-left">
               REIMAGINING THE <br /> FUTURE OF EDUCATION
             </p>
           </div>
 
-          <div className="px-6 md:px-0">
+          <div className="px-4 md:px-0 md:mt-0 mt-[-30px]">
             <p className="font-tthoves-light">
               Higher education is undergoing a transformation across the
               world—and India is no exception. With the adoption of the National

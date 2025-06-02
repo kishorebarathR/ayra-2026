@@ -5,7 +5,7 @@ import Scroll from "./Scroll"
 const CTLOffer = () => {
   return (
     <>
-      <div className="container mx-auto py-8">
+      <div className="container mx-auto md:py-8">
         {/* Header Image */}
         <div className="md:w-[40%] px-4 md:px-0">
           <Image
