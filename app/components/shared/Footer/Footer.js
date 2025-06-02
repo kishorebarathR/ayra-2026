@@ -96,10 +96,10 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/admissions"
+                  href="/admissions/apply-now"
                   className="text-gray-300 hover:text-white text-[14px] 2xl:text-[18px] leading-[27px] font-normal"
                 >
-                  Admissions
+                  Apply
                 </Link>
               </li>
               {/* <li>

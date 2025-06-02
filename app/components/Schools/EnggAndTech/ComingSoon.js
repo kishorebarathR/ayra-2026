@@ -3,9 +3,9 @@ import Image from "next/image"
 const ComingSoon = () => {
   return (
     <>
-      <div className="container mx-auto">
+      <div className="container mx-auto ">
         {/* Coming soon image below banner  MobileBanner.png */}
-        <div className="flex justify-center items-center  md:px-3 md:py-4 py-10">
+        <div className="flex justify-center items-center  md:px-3 md:pb-4 pb-5">
           <Image
             src="/schools/engg_and_tech/coming_soon.png"
             alt="School of Business Banner"
