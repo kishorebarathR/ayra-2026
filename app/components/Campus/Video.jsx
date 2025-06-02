@@ -19,6 +19,7 @@ const Video = () => {
           width={135}
           height={108}
           alt="play button"
+          className="w-[75px] h-[55px] md:w-[135px] md:h-[108px]"
         />
       </div>
     </div>

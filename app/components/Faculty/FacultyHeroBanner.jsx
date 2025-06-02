@@ -6,7 +6,7 @@ const FacultyHeroBanner = () => {
       <div className="bg-[url('/faculty/mob-banner.png')] md:bg-[url('/faculty/faculty-banner.png')] h-[80vh] md:h-[90vh] bg-cover hidden md:block"></div>
 
       {/* Mobile Banner - shown on small screens */}
-      <div className="relative w-full h-[80vh] overflow-hidden block md:hidden">
+      <div className="relative w-full h-[85vh] overflow-hidden block md:hidden">
         <div className="">
           <img
             src="/faculty/mob-banner.png"
