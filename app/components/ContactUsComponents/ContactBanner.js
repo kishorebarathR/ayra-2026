@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import Breadcrumbs from '../../utils/Breadcrumbs'
 
 const ContactBanner = () => {
   return (
@@ -12,10 +13,10 @@ const ContactBanner = () => {
           width={700}
           height={300}
         />
-        
+
       </div>
       <div className="block lg:hidden">
-      <Image
+        <Image
           src="/contact-us/contact-hero-mobile-banner.png"
           alt="Contact Banner"
           layout="responsive"
@@ -23,6 +24,14 @@ const ContactBanner = () => {
           height={300}
         />
       </div>
+
+      <div className='container mx-auto md:px-0 px-4'>
+        <Breadcrumbs items={[
+          { label: 'Home', href: '/' },
+          { label: 'Contact Us', href: '/contact-us' }
+        ]} />
+      </div>
+
     </>
   );
 };

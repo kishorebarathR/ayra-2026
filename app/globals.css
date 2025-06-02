@@ -189,7 +189,7 @@ p {
 }
 .font-tthoves-thin-italic {
   font-family: "TTHoves", sans-serif;
-  font-weight: 100;
+  font-weight: 100; 
   font-style: italic;
 }
 .font-tthoves-extralight {
