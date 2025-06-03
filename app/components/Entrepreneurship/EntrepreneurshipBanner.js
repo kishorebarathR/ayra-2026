@@ -9,7 +9,7 @@ const Banner = () => {
         {/* Desktop Image */}
         <div className="hidden md:block w-full">
           <Image
-            src="/entrepreneurship/entrepreneurship-new-desktop.png "
+            src="/entrepreneurship/entrepreneurshi-desktop.png"
             alt="Center for Entrepreneurship Desktop Banner"
             width={1920}
             height={1080}
@@ -21,7 +21,7 @@ const Banner = () => {
         {/* Mobile Image */}
         <div className="block md:hidden w-full">
           <Image
-            src="/entrepreneurship/entrepreneurship-new-mobile.png "
+            src="/entrepreneurship/entrepreneurshi-mobile.png"
             alt="Center for Entrepreneurship Mobile Banner"
             width={800}
             height={1000}
