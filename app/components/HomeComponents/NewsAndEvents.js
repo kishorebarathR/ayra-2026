@@ -1,15 +1,15 @@
-"use client"
-import Image from "next/image"
-import React from "react"
-import Slider from "react-slick"
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
+"use client";
+import Image from "next/image";
+import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const NewsAndEventData = [
   {
     id: 1,
     title: "ADMISSIONS OPEN FOR AYRA 2025-26",
-    image: "/home/new/home_story_img1.jpg",
+    image: "/home/new/story-01.png",
   },
   {
     id: 2,
@@ -20,9 +20,9 @@ const NewsAndEventData = [
     id: 3,
     title:
       "OPEN CANVAS DIALOGUES : A SPEAKER SERIES ON LEARNING WITHOUT LIMITS",
-    image: "/home/new/home_story_img3.jpg",
+    image: "/home/new/story-03.png",
   },
-]
+];
 
 const sliderSettings = {
   dots: true,
@@ -44,12 +44,12 @@ const sliderSettings = {
       },
     },
   ],
-}
+};
 
 const NewsAndEvents = () => {
   return (
     <>
-      {/* Top Section */}
+     {/* Top Section */}
       <div className="w-full flex flex-col justify-center items-center">
         <div className="container flex flex-col gap-10 py-10">
           <div className="flex flex-col items-center px-4">
@@ -80,7 +80,6 @@ const NewsAndEvents = () => {
           </div>
         </div>
       </div>
-
       {/* Carousel Section */}
       <div className="bg-[#2050B1] py-10">
         <div className="container mx-auto px-4">
@@ -130,7 +129,7 @@ const NewsAndEvents = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default NewsAndEvents
+export default NewsAndEvents;

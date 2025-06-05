@@ -6,40 +6,39 @@ import Breadcrumbs from "../../../utils/Breadcrumbs";
 const Banner = () => {
   return (
     <>
-    <div className="relative w-full bg-[#2050B2]">
-      {/* Desktop Image */}
-      <div className="hidden md:block w-full">
-        <Image
-          src="/admissions/apply-now/apply_now_banner.png"
-          alt="Bachelor Program Desktop Banner"
-          width={1920}
-          height={1080}
-          className="object-cover object-center w-full lg:h-[90vh]"
-          priority
+      <div className="mx-auto">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Apply Now", href: "/admissions/apply-now" },
+          ]}
         />
       </div>
+      <div className="relative w-full bg-[#2050B2]">
+        {/* Desktop Image */}
+        <div className="hidden md:block w-full">
+          <Image
+            src="/admissions/apply-now/apply-now-new.png"
+            alt="Bachelor Program Desktop Banner"
+            width={1920}
+            height={1080}
+            className="object-cover object-center w-full lg:h-[90vh]"
+            priority
+          />
+        </div>
 
-      {/* Mobile Image */}
-      <div className="block md:hidden w-full">
-        <Image
-          src="/admissions/apply-now/apply_now_mob_banner.png"
-          alt="Bachelor Program Mobile Banner"
-          width={800}
-          height={1000} // adjust as per your actual image ratio
-          className="object-cover object-center w-full h-auto"
-          priority
-        />
+        {/* Mobile Image */}
+        <div className="block md:hidden w-full">
+          <Image
+            src="/admissions/apply-now/apply_now_mob_banner.png"
+            alt="Bachelor Program Mobile Banner"
+            width={800}
+            height={1000} // adjust as per your actual image ratio
+            className="object-cover object-center w-full h-auto"
+            priority
+          />
+        </div>
       </div>
-    
-    </div>
-      <div className="container mx-auto px-4 lg:px-0">
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Apply Now", href: "/admissions/apply-now" },
-        ]}
-      />
-    </div>
     </>
   );
 };

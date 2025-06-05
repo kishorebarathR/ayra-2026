@@ -32,7 +32,7 @@ const blocks = [
     isText: true,
     title: "COLLABORATION ACROSS <br/> BORDERS",
     content:
-      "Our leadership cultivates relationships with leading universities, industries, and policy bodies—ensuring Ayra remains connected, relevant, and globally engaged.",
+      "Our leadership cultivates relationships with leading universities, industries, and policy bodies—ensuring AYRA remains connected, relevant, and globally engaged.",
   },
 ]
 

@@ -24,11 +24,11 @@ const headings = [
 ]
 
 const subtexts = [
-  "I like having a clear roadmap—structured, guided learning with milestones to hit.",
-  "I’d love to explore different subjects before deciding on my final path.",
-  "I want to launch something of my own—a startup, a business, or a big idea.",
-  "I learn by doing—hands-on projects and real-world applications.",
-  "Absolutely—certifications that give me a career edge sound great.",
+  "I like having a clear roadmap—structured, guided learning with milestones to hit",
+  "I’d love to explore different subjects before deciding on my final path",
+  "I want to launch something of my own—a startup, a business, or a big idea",
+  "I learn by doing—hands-on projects and real-world applications",
+  "Absolutely—certifications that give me a career edge sound great",
   "Yes! I want to build a career in sports or a related industry",
   "A 24/7 learning space where I can explore ideas whenever inspiration hits ",
 ]

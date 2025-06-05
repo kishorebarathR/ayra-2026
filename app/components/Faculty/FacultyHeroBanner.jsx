@@ -1,10 +1,18 @@
-import Image from "next/image"
-import React from "react"
-import Breadcrumbs from "../../utils/Breadcrumbs"
+import Image from "next/image";
+import React from "react";
+import Breadcrumbs from "../../utils/Breadcrumbs";
 
 const FacultyHeroBanner = () => {
   return (
     <>
+      <div className="mx-auto">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Faculty", href: "/about-us/faculty" },
+          ]}
+        />
+      </div>
       <div className="relative w-full bg-[#2050B2]">
         {/* Desktop Image */}
         <div className="hidden md:block w-full">
@@ -31,15 +39,6 @@ const FacultyHeroBanner = () => {
         </div>
       </div>
 
-      <div className="container mx-auto md:px-0 px-4">
-        <Breadcrumbs
-          items={[
-            { label: "Home", href: "/" },
-            { label: "Faculty", href: "/about-us/faculty" },
-          ]}
-        />
-      </div>
-
       <div className="container mx-auto py-5 md:pt-8 px-4 md:px-0">
         <h3 className="text-base md:text-xl text-black font-light w-full md:w-11/12 font-tthoves-extralight">
           At AYRA, our faculty are more than subject experts—they are inspiring
@@ -59,7 +58,7 @@ const FacultyHeroBanner = () => {
         </h3>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default FacultyHeroBanner
+export default FacultyHeroBanner;

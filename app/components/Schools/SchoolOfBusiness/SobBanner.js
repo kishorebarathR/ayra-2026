@@ -1,9 +1,18 @@
-import React from "react"
-import Image from "next/image"
-import Breadcrumbs from "../../../utils/Breadcrumbs"
+import React from "react";
+import Image from "next/image";
+import Breadcrumbs from "../../../utils/Breadcrumbs";
 const SobBanner = () => {
   return (
     <>
+      {/* Breadcrumbs */}
+      <div className="mx-auto">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Business", href: "/schools/engg-and-tech" },
+          ]}
+        />
+      </div>
       {/* Business Banner */}
       <div className="relative w-full bg-[#2050B2]">
         {/* Desktop Image */}
@@ -30,18 +39,8 @@ const SobBanner = () => {
           />
         </div>
       </div>
-
-      {/* Breadcrumbs */}
-      <div className="container mx-auto md:px-0 px-4">
-        <Breadcrumbs
-          items={[
-            { label: "Home", href: "/" },
-            { label: "Business", href: "/schools/engg-and-tech" },
-          ]}
-        />
-      </div>
     </>
-  )
-}
+  );
+};
 
-export default SobBanner
+export default SobBanner;

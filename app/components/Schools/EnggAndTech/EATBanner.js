@@ -1,9 +1,18 @@
-import React from "react"
-import Breadcrumbs from "../../../utils/Breadcrumbs"
-import Image from "next/image"
+import React from "react";
+import Breadcrumbs from "../../../utils/Breadcrumbs";
+import Image from "next/image";
 const EATBanner = () => {
   return (
     <>
+      {/* Breadcrumbs */}
+      <div className="mx-auto">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Engg & Tech", href: "/schools/engg-and-tech" },
+          ]}
+        />
+      </div>
       {/* Engg & Tech Banner */}
       <div className="relative w-full bg-[#2050B2]">
         {/* Desktop Image */}
@@ -30,18 +39,8 @@ const EATBanner = () => {
           />
         </div>
       </div>
-
-      {/* Breadcrumbs */}
-      <div className="container mx-auto md:px-0 px-4">
-        <Breadcrumbs
-          items={[
-            { label: "Home", href: "/" },
-            { label: "Engg & Tech", href: "/schools/engg-and-tech" },
-          ]}
-        />
-      </div>
     </>
-  )
-}
+  );
+};
 
-export default EATBanner
+export default EATBanner;

@@ -1,7 +1,7 @@
 export const programs = [
   {
     title: 'MBA GENERAL - BUSINESS',
-    description: 'A well-rounded management programme that builds leadership, strategic thinking, and cross-functional expertise.',
+    description: 'A well-rounded management program that builds leadership, strategic thinking, and cross-functional expertise.',
     image: '/admissions/bachelors_programs/explore_our_program.png',
   },
   // {

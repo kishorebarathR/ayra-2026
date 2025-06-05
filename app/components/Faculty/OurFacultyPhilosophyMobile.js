@@ -10,7 +10,7 @@ const blocks = [
     isText: true,
     title: "Learning as a Partnership",
     content:
-      "Teaching at Ayra is grounded in dialogue, co-creation, and mentorship. Faculty are collaborators in your learning journey, not just instructors.",
+      "Teaching at AYRA is grounded in dialogue, co-creation, and mentorship. Faculty are collaborators in your learning journey, not just instructors.",
   },
   {
     isText: false,
@@ -32,7 +32,7 @@ const blocks = [
     isText: true,
     title: "Interdisciplinary by Default",
     content:
-      "You’ll find business professors collaborating with tech faculty, and artists working with data scientists. Because at Ayra, problems don’t come in silos—so neither should learning.",
+      "You’ll find business professors collaborating with tech faculty, and artists working with data scientists. Because at AYRA, problems don’t come in silos—so neither should learning.",
   },
   {
     isText: false,

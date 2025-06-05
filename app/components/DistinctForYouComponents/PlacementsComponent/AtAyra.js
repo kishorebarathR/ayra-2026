@@ -2,7 +2,7 @@ import React from "react";
 
 const AtAyra = () => {
   return (
-    <div className="w-full border-t-2 border-dashed border-gray-300">
+    <div className="w-full">
       <div className="container mx-auto border-r-2 border-l-2 border-dashed border-gray-300">
         <div className="max-w-4xl mx-auto md:py-12 py-8 px-4 md:px-8 space-y-4">
           <div className=" text-center">
