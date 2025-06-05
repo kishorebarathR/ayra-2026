@@ -34,7 +34,7 @@ const Banner = () => {
           src="/international/mobile-banner-int.png"
           alt="Bachelor Program Mobile Banner"
           width={800}
-          height={1000} // adjust as per your actual image ratio
+          height={1000} 
           className="object-cover object-center w-full h-auto"
           priority
         />
@@ -66,6 +66,7 @@ const Banner = () => {
                 </div>
               </div>
             </div>
+            
           </div>
      
     </>
