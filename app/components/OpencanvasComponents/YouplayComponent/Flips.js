@@ -297,7 +297,7 @@ const FoldOnHoverRoll = () => {
                           isFirst && !hovered
                             ? "text-[#2050B1]"
                             : "text-black"
-                        } text-md md:text-md text-left break-words max-w-[280px]`}
+                        } text-md md:text-md text-center break-words max-w-[280px]`}
                       >
                         {content}
                       </h3>
@@ -326,7 +326,7 @@ const FoldOnHoverRoll = () => {
                 }}
               >
                 <div className="p-4 h-full flex flex-col justify-center">
-                  <h3 className="text-black text-sm text-left break-words max-w-[260px]">
+                  <h3 className="text-black text-sm text-center break-words max-w-[260px]">
                     {section.title}
                   </h3>
                 </div>

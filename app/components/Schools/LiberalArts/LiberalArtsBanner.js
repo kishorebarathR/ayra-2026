@@ -30,7 +30,7 @@ const Banner = () => {
         {/* Mobile Image */}
         <div className="block md:hidden w-full">
           <Image
-            src="/schools/liberal-arts/arts-mobile.png"
+            src="/schools/liberal-arts/arts-mobile-new-updated.png"
             alt="Liberal Arts Mobile Banner"
             width={800}
             height={1000}

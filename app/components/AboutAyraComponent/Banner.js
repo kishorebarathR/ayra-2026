@@ -19,7 +19,7 @@ const Banner = () => {
         {/* Desktop Image */}
         <div className="hidden md:block w-full">
           <Image
-            src="/admissions/about/new_about_banner.png"
+            src="/admissions/about/new-banner-updated-about-us.png"
             alt="Bachelor Program Desktop Banner"
             width={1920}
             height={1080}
@@ -31,7 +31,7 @@ const Banner = () => {
         {/* Mobile Image */}
         <div className="block md:hidden w-full">
           <Image
-            src="/admissions/about/new_about_mob_banner.png"
+            src="/admissions/about/new-banner-updated-about-us-mobile.png"
             alt="Bachelor Program Mobile Banner"
             width={800}
             height={1000}

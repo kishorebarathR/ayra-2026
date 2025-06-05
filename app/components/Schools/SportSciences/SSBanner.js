@@ -30,7 +30,7 @@ const SSBanner = () => {
         {/* Mobile Image */}
         <div className="block md:hidden w-full">
           <Image
-            src="/schools/sports-and-sciences/sport-sciences-mobile.png"
+            src="/schools/sports-and-sciences/sport-sciences-mobile-new-updated.png"
             alt="Sports Sciences Mobile Banner"
             width={800}
             height={1000}

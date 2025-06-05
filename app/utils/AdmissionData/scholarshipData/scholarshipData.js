@@ -26,15 +26,15 @@ export const entrepreneurShip = {
 };
 export const sustainability = {
   title: 'Sustainability',
-  description: 'Applicants who have been recognised at the state / national/international level for their contribution in the areas of SDGs are eligible to apply for this scholarship.',
+  description: 'Applicants who have been recognised at the state/national/international level for their contribution in the areas of SDGs are eligible to apply for this scholarship.',
 };
 export const arts = {
   title: 'Arts',
-  description: 'Applicants who have been recognised at the state / national/international level for their contribution to the field of arts are eligible to apply for this scholarship.',
+  description: 'Applicants who have been recognised at the state/national/international level for their contribution to the field of arts are eligible to apply for this scholarship.',
 };
 export const communityDevelopment = {
   title: 'Community\nDevelopment',
-  description: 'Applicants who have been recognised at the state / national/international level for their contribution towards community development are eligible to apply for this scholarship.',
+  description: 'Applicants who have been recognised at the state/national/international level for their contribution towards community development are eligible to apply for this scholarship.',
 };
 
 export const achievementImages = [
