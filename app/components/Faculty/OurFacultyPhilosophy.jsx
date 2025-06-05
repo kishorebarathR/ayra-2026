@@ -17,7 +17,7 @@ const OurFacultyPhilosophy = () => {
     {
       type: "text",
       title: "Learning as a Partnership",
-      text: "Teaching at Ayra is grounded in dialogue, co-creation, and mentorship. Faculty are collaborators in your learning journey, not just instructors.",
+      text: "Teaching at AYRA is grounded in dialogue, co-creation, and mentorship. Faculty are collaborators in your learning journey, not just instructors.",
     },
     {
       type: "image",
@@ -37,7 +37,7 @@ const OurFacultyPhilosophy = () => {
     {
       type: "text",
       title: "Interdisciplinary by Default",
-      text: "You’ll find business professors collaborating with tech faculty, and artists working with data scientists. Because at Ayra, problems don’t come in silos—so neither should learning.",
+      text: "You’ll find business professors collaborating with tech faculty, and artists working with data scientists. Because at AYRA, problems don’t come in silos—so neither should learning.",
     },
     {
       type: "image",

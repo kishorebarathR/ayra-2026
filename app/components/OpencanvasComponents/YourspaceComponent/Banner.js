@@ -6,6 +6,14 @@ import Breadcrumbs from "../../../utils/Breadcrumbs";
 const Banner = () => {
   return (
     <>
+      <div className="mx-auto">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Your Space", href: "/open-canvas/your-space" },
+          ]}
+        />
+      </div>
       <div className="relative w-full bg-[#2050B2]">
         {/* Desktop Image */}
         <div className="hidden md:block w-full">
@@ -30,14 +38,6 @@ const Banner = () => {
             priority
           />
         </div>
-      </div>
-      <div className="container mx-auto px-4 lg:px-0">
-        <Breadcrumbs
-          items={[
-            { label: "Home", href: "/" },
-            { label: "Your Space", href: "/open-canvas/your-space" },
-          ]}
-        />
       </div>
     </>
   );

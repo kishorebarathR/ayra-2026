@@ -61,13 +61,13 @@ const ExploreAyra = () => {
                             </li>
                         ))}
                     </ul>
-                    <div className="group inline-block">
+                    {/* <div className="group inline-block">
                         <button className="relative px-5 py-1 bg-blue-500 group-hover:bg-blue-400 text-white overflow-hidden cursor-pointer transition-colors duration-300">
                             Discover Our Schools
                             <span className="absolute top-0 right-0 w-[12px] h-[12px] bg-[#002561] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0" />
                             <span className="absolute top-0 right-0 w-0 h-0 border-t-[12px] border-l-[12px] border-t-transparent border-l-blue-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
                         </button>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

@@ -6,6 +6,15 @@ import Breadcrumbs from "../../utils/Breadcrumbs";
 const Banner = () => {
   return (
     <>
+      {/* Breadcrumb Section – No spacing added */}
+      <div className="mx-auto">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "About us", href: "/about-ayra" },
+          ]}
+        />
+      </div>
       <div className="relative w-full bg-[#2050B2] m-0 p-0">
         {/* Desktop Image */}
         <div className="hidden md:block w-full">
@@ -30,17 +39,6 @@ const Banner = () => {
             priority
           />
         </div>
-      </div>
-
-      {/* Breadcrumb Section – No spacing added */}
-
-      <div className="container mx-auto md:px-0 px-4">
-        <Breadcrumbs
-          items={[
-            { label: "Home", href: "/" },
-            { label: "About us", href: "/about-ayra" },
-          ]}
-        />
       </div>
     </>
   );

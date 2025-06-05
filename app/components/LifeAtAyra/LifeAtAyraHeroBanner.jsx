@@ -1,6 +1,6 @@
-import Image from "next/image"
-import React from "react"
-import Breadcrumbs from "../../utils/Breadcrumbs"
+import Image from "next/image";
+import React from "react";
+import Breadcrumbs from "../../utils/Breadcrumbs";
 
 const LifeAtAyraHeroBanner = () => {
   return (
@@ -20,6 +20,14 @@ const LifeAtAyraHeroBanner = () => {
           />
         </div>
       </div> */}
+      <div className="mx-auto">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Life At Ayra", href: "/distinct-for-you/life-at-ayra" },
+          ]}
+        />
+      </div>
 
       <div className="relative w-full bg-[#2050B2]">
         {/* Desktop Image */}
@@ -46,17 +54,8 @@ const LifeAtAyraHeroBanner = () => {
           />
         </div>
       </div>
-
-      <div className="container mx-auto md:px-0 px-4">
-        <Breadcrumbs
-          items={[
-            { label: "Home", href: "/" },
-            { label: "Life At Ayra", href: "/distinct-for-you/life-at-ayra" },
-          ]}
-        />
-      </div>
     </>
-  )
-}
+  );
+};
 
-export default LifeAtAyraHeroBanner
+export default LifeAtAyraHeroBanner;

@@ -59,7 +59,7 @@ const OurMission = () => {
                         />
                     </div>
                     <div className="w-full md:w-1/2 lg:w-3/5 space-y-6 md:space-y-8 font-light">
-                        <p className="text-xl md:text-2xl leading-relaxed text-center md:text-left">
+                        <p className="text-xl md:text-xl leading-relaxed text-center md:text-left">
                             To cultivate lifelong learners, innovative thinkers, and ethical
                             leaders by offering a flexible, interdisciplinary education
                             grounded in academic excellence, critical inquiry, and social

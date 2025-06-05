@@ -83,7 +83,7 @@ const Footer = () => {
                   href="/admissions/bachelors-programs"
                   className="text-gray-300 hover:text-white text-[14px] 2xl:text-[18px] leading-[27px] font-normal"
                 >
-                  Bachelor's Programs
+                  Bachelor&apos;s Programs
                 </Link>
               </li>
               <li>
@@ -91,7 +91,7 @@ const Footer = () => {
                   href="/admissions/masters-programs"
                   className="text-gray-300 hover:text-white text-[14px] 2xl:text-[18px] leading-[27px] font-normal"
                 >
-                  Master's Programs
+                  Master&apos;s Programs
                 </Link>
               </li>
               <li>
@@ -191,7 +191,7 @@ const Footer = () => {
             Terms and Conditions
           </Link>
           <span>|</span>
-          <Link href="/privacy" className="hover:text-white transition-colors">
+          <Link href="/policies" className="hover:text-white transition-colors">
             Privacy Policy
           </Link>
         </div>

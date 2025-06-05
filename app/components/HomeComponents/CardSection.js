@@ -19,20 +19,20 @@ const cardData = [
     button:
       "Learn More",
     url:
-      "/",
+      "/open-canvas/your-space",
   },
   {
     bgColor: "bg-[#F1F1F2]",
     image: "/home/distinct-for-you.png",
     title: "DISTINCT FOR YOU",
     description:
-      "A university experience built around your goals, your passions, and your ambitions.",
+      "An experience built around your goals, your passions, and your ambitions.",
     description2:
       "See what makes AYRA stand apart.",
     button:
       "Explore Now",
     url:
-      "/",
+      "/distinct-for-you/overview",
   },
 
 ];

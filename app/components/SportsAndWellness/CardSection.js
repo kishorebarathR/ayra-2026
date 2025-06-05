@@ -17,7 +17,11 @@ const cardData = [
   {
     bgColor: "bg-[#F1F1F2]",
     image: "/sports-and-wellness/vest-shoes.png",
-    title: "MULTI-SPORT INFRASTRUCTURE",
+    title: (
+      <>
+        MULTI-SPORT <br /> INFRASTRUCTURE
+      </>
+    ),
     description:
       "Cricket nets, basketball courts, football fields, indoor sports arenas, and more",
   },

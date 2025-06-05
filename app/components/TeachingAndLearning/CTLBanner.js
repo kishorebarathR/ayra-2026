@@ -5,6 +5,17 @@ import Breadcrumbs from "../../utils/Breadcrumbs"
 const CTLBanner = () => {
   return (
     <>
+    <div className="mx-auto">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            {
+              label: "Centre for Teaching & Learning",
+              href: "/centres-for-excellence/centre-for-teaching-and-learning",
+            },
+          ]}
+        />
+      </div>
       <div className="relative w-full bg-[#2050B2]">
         {/* Desktop Image */}
         <div className="hidden md:block w-full">
@@ -31,17 +42,7 @@ const CTLBanner = () => {
         </div>
       </div>
 
-      <div className="container mx-auto md:px-0 px-4">
-        <Breadcrumbs
-          items={[
-            { label: "Home", href: "/" },
-            {
-              label: "Centre for Teaching & Learning",
-              href: "/centres-for-excellence/centre-for-teaching-and-learning",
-            },
-          ]}
-        />
-      </div>
+      
     </>
   )
 }

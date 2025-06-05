@@ -27,7 +27,7 @@ const TextSection = () => {
     {
       isText: true,
       title: 'Designed Around You',
-      content: 'From flexible academic structures to a diverse ecosystem of learning and mentorship, every aspect of Ayra has been built around the evolving needs of young people today.'
+      content: 'From flexible academic structures to a diverse ecosystem of learning and mentorship, every aspect of AYRA has been built around the evolving needs of young people today.'
     },
     {
       isText: false,

@@ -1,9 +1,18 @@
-import React from "react"
-import Breadcrumbs from "../../../utils/Breadcrumbs"
-import Image from "next/image"
+import React from "react";
+import Breadcrumbs from "../../../utils/Breadcrumbs";
+import Image from "next/image";
 const SSBanner = () => {
   return (
     <>
+      {/* Breadcrumbs */}
+      <div className="mx-auto">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Sports Sciences", href: "/schools/sports-sciences" },
+          ]}
+        />
+      </div>
       {/* Sports Sciences Banner */}
       <div className="relative w-full bg-[#2050B2]">
         {/* Desktop Image */}
@@ -30,18 +39,8 @@ const SSBanner = () => {
           />
         </div>
       </div>
-
-      {/* Breadcrumbs */}
-      <div className="container mx-auto md:px-0 px-4">
-        <Breadcrumbs
-          items={[
-            { label: "Home", href: "/" },
-            { label: "Sports Sciences", href: "/schools/sports-sciences" },
-          ]}
-        />
-      </div>
     </>
-  )
-}
+  );
+};
 
-export default SSBanner
+export default SSBanner;

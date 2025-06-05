@@ -294,3 +294,13 @@ p {
 
 
 
+/* Custom slick dots style */
+.slick-dots li button:before {
+  font-size: 14px !important; /* Make dots bigger */
+  color: #ccc !important;     /* Make dots white */
+  opacity: 1 !important;
+}
+
+.slick-dots li.slick-active button:before {
+  color: white !important;
+}

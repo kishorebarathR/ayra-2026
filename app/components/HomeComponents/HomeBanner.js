@@ -20,7 +20,7 @@ const Banner = () => {
             {/* Mobile Image */}
             <div className="block md:hidden w-full">
                 <Image
-                    src="/home/new/new_home_mob_banner.png"
+                    src="/home/new/home-page-mobile-new.png"
                     alt="Bachelor Program Mobile Banner"
                     width={800}
                     height={1000} // adjust as per your actual image ratio
