@@ -1,102 +1,149 @@
-import React from "react"
-
+"use client"
+import React, { useState, useEffect } from "react"
 import Image from "next/image"
+import Slider from "react-slick"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+
 export default function GlobalExchangePrograms() {
-  const highlights = [
-    "Semester-long and short-term exchange opportunities with partner universities across Europe, Asia, Australia, and North America",
-    "Credit-transfer mechanisms to ensure a seamless academic journey",
-    "Guidance with applications, travel planning, and cultural orientation",
-    "Language support and pre-departure workshops to prepare you for life abroad",
+  const [isMobile, setIsMobile] = useState(false)
+
+  // Define the slides data
+  const slides = [
+    {
+      title: "GLOBAL EXCHANGE PROGRAMS",
+      subtitle: "Experience education from a new perspective.",
+      highlights: [
+        "Semester-long and short-term exchange opportunities",
+        "Credit-transfer mechanisms for a smooth transition",
+        "Support with applications and cultural orientation",
+        "Pre-departure workshops to prepare you abroad",
+      ],
+    },
+    {
+      title: "INTERNATIONAL COLLABORATIONS",
+      subtitle: "Partnerships that go beyond paper",
+      highlights: [
+        "Academic MoUs with universities and institutes across the globe",
+        "Collaborative research, joint degrees, and faculty exchange opportunities",
+        "Access to international seminars, conferences, and knowledge-sharing platforms",
+        "Co-designed programmes focused on emerging global themes",
+      ],
+    },
+    {
+      title: "SUPPORT FOR INTERNATIONAL STUDENTS",
+      subtitle: "A welcoming home away from home.",
+      highlights: [
+        "Dedicated orientation sessions and onboarding support",
+        "Visa and documentation guidance",
+        "Language and academic support",
+        "Peer mentoring, cultural events, and integration support to make every student feel at home at AYRA",
+      ],
+    },
   ]
+
+  // Set default slider settings
+  const defaultSettings = {
+    dots: false,
+    arrows: false,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  }
+
+  // Update slider settings for mobile view
+  const mobileSettings = {
+    ...defaultSettings,
+    dots: true,
+  }
+
+  // Handle window resize
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768) // 768px or smaller is considered mobile
+    }
+
+    handleResize() // Initial check on mount
+    window.addEventListener("resize", handleResize) // Update on window resize
+
+    return () => {
+      window.removeEventListener("resize", handleResize) // Cleanup on unmount
+    }
+  }, [])
+
   return (
     <>
-      <div className="w-full border-gray-300 border-t-2 border-dashed">
-        <div className="container mx-auto border-r-2 border-l-2 border-dashed border-gray-300">
-          <div className="max-w-4xl mx-auto py-12 px-4  md:px-8 space-y-8">
-            <div className=" text-center">
-              <p className="text-md ">
-                At AYRA, we don&apos;t just prepare students for careers—we help them
-                launch them.
-              </p>
-              <p className="text-md text-gray-700 leading-relaxed">
-                The Placements & Internship Centre is a dynamic platform
-                connecting students to real-world opportunities across
-                industries, geographies, and career paths.
-              </p>
-            </div>
-            <div className="text-center">
-              <p className="text-md text-gray-700 leading-relaxed">
-                Whether you&apos;re pursuing engineering, liberal arts, business,
-                hospitality, or sports sciences, we support you with resources,
-                guidance, and access to top organisations and mentors.
-              </p>
-            </div>
+
+<style>
+        {`
+          @media (max-width: 768px) {
+            .slick-dots li button:before {
+              font-size: 8px !important; /* Make the dot smaller */
+              color: #2050B1 !important; /* Change the dot color */
+            }
+
+            .slick-dots {
+              bottom: -20px !important; /* Optional: adjust position if needed */
+            }
+          }
+          `}
+      </style>
+    <div className="bg-[url('/opencanvas/opc-bg-img.png')] bg-cover bg-center bg-no-repeat py-8">
+      <div className="container mx-auto px-4 md:px-0">
+        <h1 className="text-3xl md:text-7xl tracking-wider font-schabo text-[#2050B1] mb-6">
+          WHAT WE OFFER
+        </h1>
+
+        <div className="relative grid grid-cols-1 md:grid-cols-2 gap-10 py-5">
+          {/* Left Image */}
+          <div>
+            <Image
+              src="/international/int-img-1.png"
+              width={600}
+              height={300}
+              alt="faculty highlights"
+              className="object-center w-full h-auto"
+              priority
+            />
+          </div>
+
+          {/* Right Carousel */}
+          <div className="min-h-[380px]">
+            <Slider {...(isMobile ? mobileSettings : defaultSettings)}>
+              {slides.map((slide, index) => (
+                <div key={index} className="p-2">
+                  <div className="transition-all duration-500 ease-in-out">
+                    <h2 className="text-2xl md:text-[48px] leading-[28px] lg:leading-[48px] text-[#2050B1] font-tthoves-bold">
+                      {slide.title}
+                    </h2>
+                    <h2 className="lg:text-2xl text-xl mt-4 text-black font-tthoves-regular">
+                      {slide.subtitle}
+                    </h2>
+                    <ul className="mt-4 md:mt-6 space-y-4 text-sm md:text-base text-black font-tthoves-extralight">
+                      {slide.highlights.map((text, idx) => (
+                        <li className="flex items-start gap-2" key={idx}>
+                          <Image
+                            src="/rocket-icon.svg"
+                            width={20}
+                            height={16}
+                            className="w-5 h-4 rotate-45 mt-1.5"
+                            alt="rocket-logo"
+                          />
+                          <span>{text}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </Slider>
           </div>
         </div>
       </div>
-
-      <div className="bg-[url('/opencanvas/opc-bg-img.png')] bg-cover bg-center bg-no-repeat py-8">
-        <div className="container mx-auto px-4 md:px-0">
-          <h1 className="text-3xl md:text-7xl tracking-wider font-schabo text-[#2050B1] mb-6">
-            WHAT WE OFFER
-          </h1>
-
-          <div className="relative grid grid-cols-1 md:grid-cols-2 gap-10 py-5 ">
-            {/* Image Left */}
-            <div>
-              <Image
-                src="/international/int-img-1.png"
-                width={600}
-                height={300}
-                alt="faculty highlights"
-                className="object-center w-full h-auto"
-                priority
-              />
-            </div>
-
-            {/* Description Right */}
-            <div>
-              <h2 className="text-xl md:text-4xl text-[#2050B1] font-tthoves-demibold">
-                GLOBAL EXCHANGE PROGRAMS
-              </h2>
-
-              <h2 className=" text-2xl mt-4 text-black  font-tthoves-regular ">
-                Experience education from a new perspective.
-              </h2>
-
-              <ul className="mt-4 md:mt-6 space-y-4 text-sm md:text-base text-black font-tthoves-extralight">
-                {highlights.map((text, idx) => (
-                  <li className="flex items-start gap-2" key={idx}>
-                    <Image
-                      src="/rocket-icon.svg"
-                      width={20}
-                      height={16}
-                      className="w-5 h-4 rotate-45 mt-1.5"
-                      alt="rocket-logo"
-                    />
-                    <span>{text}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <h2 className="text-3xl md:text-7xl tracking-wider font-schabo text-[#2050B1] mb-6 mt-8 container mx-auto px-4 ">
-        <span class="block">WHY GO GLOBAL WITH AYRA?</span>
-      </h2>
-
-      <div className="w-full container mx-auto px-4 py-10">
-        <Image
-          src="/international/int-img-2.png"
-          alt="Person holding tablet"
-          width={1300}
-          height={1600}
-          className="w-full h-full object-cover "
-          priority
-        />
-      </div>
-    </>
+    </div>
+  </>
   )
 }
