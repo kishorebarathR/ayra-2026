@@ -48,8 +48,8 @@ export default function GlobalExchangePrograms() {
     arrows: false,
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 3000,
-    speed: 500,
+    autoplaySpeed: 1000,
+    speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
   }
@@ -63,14 +63,14 @@ export default function GlobalExchangePrograms() {
   // Handle window resize
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768) // 768px or smaller is considered mobile
+      setIsMobile(window.innerWidth <= 768) 
     }
 
     handleResize() // Initial check on mount
-    window.addEventListener("resize", handleResize) // Update on window resize
+    window.addEventListener("resize", handleResize) 
 
     return () => {
-      window.removeEventListener("resize", handleResize) // Cleanup on unmount
+      window.removeEventListener("resize", handleResize) 
     }
   }, [])
 
@@ -81,12 +81,15 @@ export default function GlobalExchangePrograms() {
         {`
           @media (max-width: 768px) {
             .slick-dots li button:before {
-              font-size: 8px !important; /* Make the dot smaller */
+              font-size: 10px !important; /* Make the dot smaller */
               color: #2050B1 !important; /* Change the dot color */
             }
+               .slick-dots li.slick-active button:before {
+        color: blue !important; /* Active dot color */
+      }
 
             .slick-dots {
-              bottom: -20px !important; /* Optional: adjust position if needed */
+              bottom: -25px !important; /* Optional: adjust position if needed */
             }
           }
           `}
@@ -111,7 +114,7 @@ export default function GlobalExchangePrograms() {
           </div>
 
           {/* Right Carousel */}
-          <div className="min-h-[380px]">
+          <div className="min-h-[340px]">
             <Slider {...(isMobile ? mobileSettings : defaultSettings)}>
               {slides.map((slide, index) => (
                 <div key={index} className="p-2">

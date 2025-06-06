@@ -38,7 +38,19 @@ const TextSection = () => {
       isText: true,
       title: 'Future-Ready Curriculum',
       content: "With a strong foundation in liberal arts, technology, business, hospitality, and sports sciences, our academic offerings are designed to meet the demands of tomorrow's world - while fostering curiosity, creativity, and critical thought."
+    },
+       {
+      isText: false,
+      image: '/admissions/masters_programs/what_set_us_1.png',
+      alt: 'Designed Around You'
+    },
+    {
+      isText: true,
+      title: 'Rooted in India, Open to the World',
+      content: "Based in Bengaluru, India’s innovation capital, Ayra connects the local and global. We bring the best of both worlds—deep contextual understanding and international standards."
     }
+
+    
   ];
 
   // Track scroll to enable/disable internal lock

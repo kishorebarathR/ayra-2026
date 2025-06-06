@@ -64,7 +64,7 @@ const AyraIsForTheStudent = () => {
                 </div>
 
                 <p className="text-lg md:text-2xl font-light max-w-3xl px-4 md:px-0">
-                    AYRA's Bachelor's programs are built to give you the space, support, and structure to grow—intellectually, personally, and professionally.
+                AYRA is where potential unfolds. Where futures are not just imagined—but realised.
                 </p>
                 <div className="w-full px-4 md:px-0">
                     {/* <HoverButton5 text="Learn More About AYRA Leadership" />     */}

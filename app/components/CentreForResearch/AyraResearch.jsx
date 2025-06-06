@@ -16,7 +16,7 @@ const AyraResearch = () => {
             AYRA RESEARCH <br className="hidden md:block" /> CENTRES &
             INITIATIVES
           </h1>
-          <p className="text-base md:text-xl font-tthoves-extralight self-center">
+          <p className="text-sm md:text-base font-tthoves-extralight self-center">
             To bring this vision to life, AYRA has launched the AYRA Research
             and Consultancy Hub (ARCH)—a central space for ideation,
             experimentation, and collaboration. ARCH is home to shared research
