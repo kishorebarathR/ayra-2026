@@ -147,25 +147,29 @@ const Footer = () => {
         {/* Socials */}
         <div className="flex justify-center md:justify-start space-x-4">
           <Link
+          target="_blank"
             href="https://linkedin.com"
             className="bg-white p-2 rounded hover:bg-gray-200"
           >
             <FaLinkedin className="text-[#002561] w-5 h-5" />
           </Link>
           <Link
-            href="https://instagram.com"
+          target="_blank"
+            href="https://www.instagram.com/ayraeducation/"
             className="bg-white p-2 rounded hover:bg-gray-200"
           >
             <FaInstagram className="text-[#002561] w-5 h-5" />
           </Link>
           <Link
+          target="_blank"
             href="https://facebook.com"
             className="bg-white p-2 rounded hover:bg-gray-200"
           >
             <FaFacebook className="text-[#002561] w-5 h-5" />
           </Link>
           <Link
-            href="https://twitter.com"
+          target="_blank"
+            href="https://x.com/AYRA_social"
             className="bg-white p-2 rounded hover:bg-gray-200"
           >
             <FaXTwitter className="text-[#002561] w-5 h-5" />
