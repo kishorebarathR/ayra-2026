@@ -11,6 +11,7 @@ const Scroll = () => {
     "Assessment Innovation through meaningful evaluation frameworks that reflect real student growth and potential",
     "Collaborative Educational Research with institutions in India and abroad to drive thought leadership in higher education",
     "Executive & Certification program focused on upskilling educators and working professionals",
+    "Capacity-Building for the Sector through workshops, training, and resources aimed at strengthening teaching across institutions for higher education",
   ]
 
   const settings = {

@@ -4,6 +4,7 @@ import Banner from "./Banner"
 import Whygo from "./Whygo"
 import Ayraedge from "./Ayraedge"
 
+
 const index = () => {
   return (
     <>
@@ -12,6 +13,7 @@ const index = () => {
         <International />
         <Whygo />
         <Ayraedge/>
+
       </div>
     </>
   )
