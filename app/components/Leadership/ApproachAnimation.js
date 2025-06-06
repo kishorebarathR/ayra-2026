@@ -42,6 +42,17 @@ const ApproachAnimation = () => {
       content:
         "Our leadership cultivates relationships with leading universities, industries, and policy AYRA remains connected, relevant, and globally engaged.",
     },
+    {
+      isText: false,
+      image: "/leadership/img2.png",
+      content: "Designed Around You",
+    },
+    {
+      isText: true,
+      title: "A CULTURE OF INNOVATION AND INTEGRITY",
+      content:
+        "Integrity in governance and boldness in thought—these are non-negotiables. We strive to create a university culture that’s both principled and progressive.",
+    },
   ]
 
   // Track scroll to enable/disable internal lock

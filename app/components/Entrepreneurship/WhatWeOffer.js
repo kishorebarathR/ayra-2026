@@ -4,7 +4,7 @@ import Image from "next/image"
 const WhatWeOffer = () => {
   const items = [
     {
-      title: "Startup <br /> Incubation",
+      title: "Startup Incubation",
       description:
         "Support for student-led ventures with mentorship, workspace, and access to early-stage capital.",
     },
@@ -58,19 +58,22 @@ const WhatWeOffer = () => {
         </div>
 
         {/* Points Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 divide-y md:divide-y-0 md:divide-x divide-dashed divide-[#4FA6FF]">
-          {items.map((item, index) => (
-            <div key={index} className="px-4 py-6">
-              <h1
-                className="text-base md:text-lg lg:text-xl xl:text-2xl text-[#2050B1] font-semibold leading-snug"
-                dangerouslySetInnerHTML={{ __html: item.title }}
-              />
-              <p className="text-sm mt-2 font-tthoves-light leading-relaxed">
-                {item.description}
-              </p>
-            </div>
-          ))}
+        <div className="container mx-auto ">
+        {/* Points */}
+        <div className="py-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5  lg:divide-x divide-dashed divide-[#4FA6FF]">
+            {items.map((item, index) => (
+              <div key={index} className="px-2 lg:px-">
+                <h1
+                  className="text-xl md:text-2xl text-[#2050B1] font-tthoves-bold "
+                  dangerouslySetInnerHTML={{ __html: item.title }}
+                ></h1>
+                <p className="text-sm mt-2">{item.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
+      </div>
       </div>
     </>
   )
