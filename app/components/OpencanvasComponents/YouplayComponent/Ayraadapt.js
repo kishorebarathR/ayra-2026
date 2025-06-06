@@ -31,7 +31,7 @@ const Ayraadapt = () => {
               <p className="lg:text-base text-sm px-4">
                 At AYRA, your education isn’t just about degrees—it’s about
                 discovery, challenge, and self-expression.From state-of-the-art
-                sports facilities and university teams to performing arts,
+                sports facilities and sports team to performing arts,
                 student-led clubs, and leadership programs, AYRA ensures that
                 your learning experience is as dynamic as you are.
               </p>
