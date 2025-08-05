@@ -30,15 +30,15 @@ const PartOfYourDailyLife = () => {
 
             {/* Overlay Content */}
             <div className="absolute lg:bottom-20 bottom-0 lg:left-[55%] left-[0%] flex items-center">
-              <div className=" text-white p-10">
-                <p className="py-5">
+              <div className="text-white lg:p-10 p-5">
+                <p className="py-5 text-lg">
                   At AYRA, wellness isn’t an add-on—it’s built into your
                   experience. Morning fitness routines, evening yoga,
                   competitive leagues, and student-run wellness initiatives all
                   contribute to a culture of health, discipline, and joy.
                 </p>
 
-                <p>
+                <p className="text-lg">
                   Whether you’re aiming for athletic excellence or building
                   lifelong wellness habits, the Sports & Wellness Centre is here
                   to support your journey.

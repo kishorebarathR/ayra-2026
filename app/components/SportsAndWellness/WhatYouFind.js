@@ -3,14 +3,19 @@ import React from "react";
 
 const WhatYouFind = () => {
   return (
-    <div className="border-b-2 border-t-2 border-dashed border-[#A9B8D5] mb-10">
-      <div className="flex flex-col items-center justify-center container mx-auto border-l-2 border-r-2 border-dashed border-[#A9B8D5] p-5">
+    <div className="bg-white py-10 hidden lg:block">
+      <div className="container mx-auto px-4 md:px-0">
+        <h1 className="text-3xl md:text-8xl tracking-wider font-schabo text-[#002561]">
+          WHAT YOU&apos;LL <br className="hidden md:block" /> FIND HERE
+        </h1>
+      </div>
+      <div className="flex flex-col items-center justify-center container mx-auto lg:p-5">
         <Image
-          src="/sports-and-wellness/what-youl-find-here.png"
+          src="/sports-and-wellness/find-here.png"
           alt="yourApplication"
           width={800}
           height={300}
-          className="p-5"
+          className="p-5 "
         />
       </div>
     </div>

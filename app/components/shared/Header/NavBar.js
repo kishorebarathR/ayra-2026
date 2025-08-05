@@ -70,6 +70,9 @@ const menuItems = [
         slug: "centre-for-entrepreneurship",
       },
       { name: "Centre for Research", slug: "centre-for-research" },
+      { name: "Centre for Inner Peace", slug: "centre-for-inner-peace" },
+      { name: "Centre for Community Engagement", slug: "centre-for-community-engagement" },
+      { name: "Centre for Sustainability", slug: "centre-for-sustainability" },
     ],
   },
   {

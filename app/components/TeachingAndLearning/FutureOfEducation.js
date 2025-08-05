@@ -1,5 +1,5 @@
-import React from "react"
-import Image from "next/image"
+import React from "react";
+import Image from "next/image";
 const FutureOfEducation = () => {
   return (
     <>
@@ -41,7 +41,7 @@ const FutureOfEducation = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default FutureOfEducation
+export default FutureOfEducation;
