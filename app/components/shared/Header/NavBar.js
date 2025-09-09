@@ -30,12 +30,26 @@ const menuItems = [
         name: "Focus Centres",
         slug: "focus-centre",
         submenu: [
-          { name: "Sports & Wellness", slug: "sports-and-wellness-centre" },
-          { name: "Community Engagement", slug: "centre-for-community-engagement" },
-          { name: "Sustainability", slug: "centre-for-sustainability" },
-          { name: "Inner Peace", slug: "centre-for-inner-peace" },
+          { name: "Centre for Sports and Wellness", slug: "sports-and-wellness-centre" },
+          { name: "Centre for Skill Development", slug: "centre-for-skill-development" },
+          { name: "Centre for Sustainability", slug: "centre-for-sustainability" },
+          { name: "Centre for IKS", slug: "centre-for-indian-knowledge-systems" },
+          { name: "Centre for Inner Peace", slug: "centre-for-inner-peace" },
+          { name: "Centre for Student Welfare", slug: "centre-for-student-welfare" },
+          { name: "Centre for Healthcare and Infirmary", slug: "centre-for-healthcare-and-infirmary" },
         ],
+       
       },
+      {
+        name: "Alliance Centres",
+        slug: "focus-centre",
+        submenu: [
+          { name: "Centre for International Relations", slug: "distinct-for-you/international-centre" },
+          { name: "Centre for Corporate Relations, Career and Alumni (placements and internships)", slug: "distinct-for-you/placements-internship" },
+          { name: "Centre for Community Engagement", slug: "focus-centre/centre-for-community-engagement" },
+         
+        ],
+      }
     ],
   },
   {
