@@ -1,14 +1,31 @@
-"use client";
+"use client"
 
-import React, { useState, useEffect, useRef } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { FaSearch, FaBars, FaTimes } from "react-icons/fa";
-import { MdKeyboardArrowRight, MdKeyboardArrowUp } from "react-icons/md";
-import { usePathname } from "next/navigation";
+import React, { useState, useEffect, useRef } from "react"
+import Link from "next/link"
+import Image from "next/image"
+import { FaSearch, FaBars, FaTimes } from "react-icons/fa"
+import { MdKeyboardArrowRight, MdKeyboardArrowUp } from "react-icons/md"
+import { usePathname } from "next/navigation"
 
 // --- Menu Data and Utility ---
 const menuItems = [
+  {
+    name: "About AYRA",
+    submenu: [
+      { name: "Overview", slug: "/about-us/overview" },
+      { name: "Act and Statutes or MoA", slug: "/coming-soon" },
+      { name: "Institutional Development Plan", slug: "/coming-soon" },
+      {
+        name: "Constituent Units/ Affiliated Colleges, Affiliating University ",
+        slug: "/coming-soon",
+      },
+      { name: "Accreditation and Ranking", slug: "/coming-soon" },
+      { name: "Recognition/Approval", slug: "/coming-soon" },
+      { name: "Annual Reports", slug: "/coming-soon" },
+      { name: "Annual Accounts", slug: "/coming-soon" },
+      { name: "Sponsors & Supporters", slug: "/coming-soon" },
+    ],
+  },
   {
     name: "Open Canvas",
     submenu: [
@@ -18,107 +35,292 @@ const menuItems = [
       { name: "You Play", slug: "you-play" },
     ],
   },
+
   {
-    name: "Distinct for You",
+    name: "Administration",
     submenu: [
-      { name: "Overview", slug: "overview" },
-      { name: "Campus", slug: "campus" },
-      { name: "Life at AYRA", slug: "life-at-ayra" },
-      // { name: "International Centre", slug: "international-centre" },
-      // { name: "Placements & Internship", slug: "placements-internship" },
+      { name: "Leadership", slug: "/about-us/leadership" },
+      { name: "Governing Council Members", slug: "/coming-soon" },
+      { name: "Management Council Members", slug: "/coming-soon" },
+      { name: "Finance Committee", slug: "/coming-soon" },
+      { name: "Chief Vigilance Officer", slug: "/coming-soon" },
+      { name: "Controller of Examination", slug: "/coming-soon" },
+      { name: "Academic Leadership", slug: "/coming-soon" },
+      { name: "Additional Members", slug: "/coming-soon" },
+    ],
+  },
+
+  {
+    name: "Academics",
+    submenu: [
+      { name: "Program Details", slug: "/admissions/bachelors-programs" },
+      { name: "Academic Calendar", slug: "/coming-soon" },
+      { name: "Examinations", slug: "/coming-soon" },
+      {
+        name: "Schools & Departments",
+
+        submenu: [
+          { name: "Engg & Tech", slug: "engg-and-tech" },
+          { name: "Sports Sciences", slug: "sports-sciences" },
+          { name: "Business", slug: "business" },
+          { name: "Hospitality", slug: "hospitality" },
+          { name: "Liberal Arts", slug: "liberal-arts" },
+        ],
+      },
+      { name: "Faculty Details", slug: "/about-us/faculty" },
+      { name: "Swayam NPTEL", slug: "/coming-soon" },
+      { name: "Internal Quality Assurance Cell (IQAC)", slug: "/coming-soon" },
+      { name: "Library & Information Centre", slug: "/coming-soon" },
+      { name: "Academic Collaborations", slug: "/coming-soon" },
+    ],
+  },
+  // {
+  //   name: "Distinct for You",
+  //   submenu: [
+  //     { name: "Overview", slug: "overview" },
+  //     { name: "Campus", slug: "campus" },
+  //     { name: "Life at AYRA", slug: "life-at-ayra" },
+  //     // { name: "International Centre", slug: "international-centre" },
+  //     // { name: "Placements & Internship", slug: "placements-internship" },
+  //     {
+  //       name: "Focus Centres",
+  //       slug: "focus-centre",
+  //       submenu: [
+  //         {
+  //           name: "Centre for Sports and Wellness",
+  //           slug: "sports-and-wellness-centre",
+  //         },
+  //         {
+  //           name: "Centre for Skill Development",
+  //           slug: "centre-for-skill-development",
+  //         },
+  //         {
+  //           name: "Centre for Sustainability",
+  //           slug: "centre-for-sustainability",
+  //         },
+  //         {
+  //           name: "Centre for IKS",
+  //           slug: "centre-for-indian-knowledge-systems",
+  //         },
+  //         { name: "Centre for Inner Peace", slug: "centre-for-inner-peace" },
+  //         {
+  //           name: "Centre for Student Welfare",
+  //           slug: "centre-for-student-welfare",
+  //         },
+  //         {
+  //           name: "Centre for Healthcare and Infirmary",
+  //           slug: "centre-for-healthcare-and-infirmary",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       name: "Alliance Centres",
+  //       slug: "focus-centre",
+  //       submenu: [
+  //         {
+  //           name: "Centre for International Relations",
+  //           slug: "distinct-for-you/international-centre",
+  //         },
+  //         {
+  //           name: "Centre for Corporate Relations, Career and Alumni",
+  //           slug: "distinct-for-you/placements-internship",
+  //         },
+  //         {
+  //           name: "Centre for Community Engagement",
+  //           slug: "focus-centre/centre-for-community-engagement",
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // },
+  {
+    name: "Admissions & Fee",
+    submenu: [
+      {
+        name: "Admissions Process & Guidelines",
+        slug: "/admissions/apply-now",
+      },
+      { name: "Prospectus", slug: "/coming-soon" },
+      { name: "Fee Refund policy", slug: "/coming-soon" },
+      { name: "Scholarships", slug: "/admissions/scholarships" },
+    ],
+  },
+  // {
+  //   name: "Schools",
+  //   submenu: [
+  //     { name: "Engg & Tech", slug: "engg-and-tech" },
+  //     { name: "Sports Sciences", slug: "sports-sciences" },
+  //     { name: "Business", slug: "business" },
+  //     { name: "Hospitality", slug: "hospitality" },
+  //     { name: "Liberal Arts", slug: "liberal-arts" },
+  //   ],
+  // },
+
+  {
+    name: "Research",
+    submenu: [
+      {
+        name: "Research at AYRA",
+        slug: "/centres-for-excellence/centre-for-research",
+      },
+      {
+        name: "Entrepreneurship",
+        slug: "/centres-for-excellence/centre-for-entrepreneurship",
+      },
+    ],
+  },
+
+  {
+    name: "Centres",
+    submenu: [
+      {
+        name: "Centres for Excellence",
+        submenu: [
+          {
+            name: "Centre for Teaching & Learning",
+            slug: "/centres-for-excellence/centre-for-teaching-and-learning",
+          },
+          {
+            name: "Centre for Entrepreneurship",
+            slug: "/centres-for-excellence/centre-for-entrepreneurship",
+          },
+          {
+            name: "Centre for Research",
+            slug: "/centres-for-excellence/centre-for-research",
+          },
+        ],
+      },
       {
         name: "Focus Centres",
         slug: "focus-centre",
         submenu: [
-          { name: "Centre for Sports and Wellness", slug: "sports-and-wellness-centre" },
-          { name: "Centre for Skill Development", slug: "centre-for-skill-development" },
-          { name: "Centre for Sustainability", slug: "centre-for-sustainability" },
-          { name: "Centre for IKS", slug: "centre-for-indian-knowledge-systems" },
+          {
+            name: "Centre for Sports and Wellness",
+            slug: "sports-and-wellness-centre",
+          },
+          {
+            name: "Centre for Skill Development",
+            slug: "centre-for-skill-development",
+          },
+          {
+            name: "Centre for Sustainability",
+            slug: "centre-for-sustainability",
+          },
+          {
+            name: "Centre for IKS",
+            slug: "centre-for-indian-knowledge-systems",
+          },
           { name: "Centre for Inner Peace", slug: "centre-for-inner-peace" },
-          { name: "Centre for Student Welfare", slug: "centre-for-student-welfare" },
-          { name: "Centre for Healthcare and Infirmary", slug: "centre-for-healthcare-and-infirmary" },
+          {
+            name: "Centre for Student Welfare",
+            slug: "centre-for-student-welfare",
+          },
+          {
+            name: "Centre for Healthcare and Infirmary",
+            slug: "centre-for-healthcare-and-infirmary",
+          },
         ],
-       
       },
       {
         name: "Alliance Centres",
         slug: "focus-centre",
         submenu: [
-          { name: "Centre for International Relations", slug: "distinct-for-you/international-centre" },
-          { name: "Centre for Corporate Relations, Career and Alumni", slug: "distinct-for-you/placements-internship" },
-          { name: "Centre for Community Engagement", slug: "focus-centre/centre-for-community-engagement" },
-         
+          {
+            name: "Centre for International Relations",
+            slug: "distinct-for-you/international-centre",
+          },
+          {
+            name: "Centre for Corporate Relations, Career and Alumni",
+            slug: "distinct-for-you/placements-internship",
+          },
+          {
+            name: "Centre for Community Engagement",
+            slug: "focus-centre/centre-for-community-engagement",
+          },
         ],
-      }
+      },
     ],
   },
+
   {
-    name: "Admissions",
-    submenu: [
-      { name: "Apply", slug: "apply-now" },
-      { name: "Scholarships", slug: "scholarships" },
-      { name: "Bachelor's Programs", slug: "bachelors-programs" },
-      { name: "Master's Programs", slug: "masters-programs" },
-      // { name: 'Academics', slug: 'academics' },
-    ],
-  },
-  {
-    name: "Schools",
-    submenu: [
-      { name: "Engg & Tech", slug: "engg-and-tech" },
-      { name: "Sports Sciences", slug: "sports-sciences" },
-      { name: "Business", slug: "business" },
-      { name: "Hospitality", slug: "hospitality" },
-      { name: "Liberal Arts", slug: "liberal-arts" },
-    ],
-  },
-  {
-    name: "Centres for Excellence",
+    name: "Student Life",
     submenu: [
       {
-        name: "Centre for Teaching & Learning",
-        slug: "centre-for-teaching-and-learning",
+        name: "Sports Facilities",
+        slug: "focus-centre/sports-and-wellness-centre",
       },
+      { name: "NCC/NSS", slug: "/coming-soon" },
+      { name: "Hostel Details", slug: "/coming-soon" },
+      { name: "Placement Cell", slug: "/coming-soon" },
       {
-        name: "Centre for Entrepreneurship",
-        slug: "centre-for-entrepreneurship",
+        name: "Health facilities",
+        slug: "focus-centre/centre-for-healthcare-and-infirmary",
       },
-      { name: "Centre for Research", slug: "centre-for-research" },
+      { name: "Internal Complaint Committee", slug: "/coming-soon" },
+      {
+        name: "Student Grievance Redressal Committee (SGRC)",
+        slug: "/coming-soon",
+      },
+      { name: "Anti-Ragging Cell", slug: "/coming-soon" },
+      { name: "Anti-Sexual Harassment Committee", slug: "/coming-soon" },
+      { name: "Equal Opportunity Cell", slug: "/coming-soon" },
+      { name: "Facilities for differently-abled", slug: "/coming-soon" },
     ],
   },
+
   {
-    name: "Research",
-    submenu: [{ name: "Research at AYRA", slug: "research-at-ayra" }],
-  },
-  {
-    name: "About Us",
+    name: "Information Center",
     submenu: [
-      { name: "Overview", slug: "overview" },
-      { name: "Leadership", slug: "leadership" },
-      { name: "Faculty", slug: "faculty" },
+      { name: "RTI", slug: "/coming-soon" },
+      { name: "Circulars and Notices", slug: "/coming-soon" },
+      { name: "Announcements", slug: "/coming-soon" },
+      { name: "Newsletter", slug: "/coming-soon" },
+      { name: "News", slug: "/coming-soon" },
+      { name: "Events", slug: "/coming-soon" },
+      { name: "Blogs", slug: "/coming-soon" },
+      { name: "Careers", slug: "/coming-soon" },
+      {
+        name: "Reservation Roster (wherever applicable)",
+        slug: "/coming-soon",
+      },
+      { name: "Study in India", slug: "/coming-soon" },
+      {
+        name: "Admission procedure and facilities provided to International Students",
+        slug: "/coming-soon",
+      },
     ],
   },
-];
+
+  // {
+  //   name: "About Us",
+  //   submenu: [
+  //     { name: "Overview", slug: "overview" },
+  //     { name: "Leadership", slug: "leadership" },
+  //     { name: "Faculty", slug: "faculty" },
+  //   ],
+  // },
+]
 
 const generateHref = (item, parent) => {
-  if (!item.slug) return "#";
-  if (parent === "Open Canvas") return `/open-canvas/${item.slug}`;
-  if (parent === "Open Canvas") return `/open-canvas/${item.slug}`;
-  if (parent === "Distinct for You") return `/distinct-for-you/${item.slug}`;
-  if (parent === "Admissions") return `/admissions/${item.slug}`;
-  if (parent === "Distinct for You") return `/distinct-for-you/${item.slug}`;
-  if (parent === "Schools") return `/schools/${item.slug}`;
+  if (!item.slug) return "#"
+
+  // If slug already starts with /, return it as is (e.g., /coming-soon)
+  if (item.slug.startsWith("/")) {
+    return item.slug
+  }
+
+  if (parent === "Open Canvas") return `/open-canvas/${item.slug}`
+  if (parent === "Distinct for You") return `/distinct-for-you/${item.slug}`
+  if (parent === "Admissions" || parent === "Admissions & Fee")
+    return `/admissions/${item.slug}`
+  if (parent === "Schools") return `/schools/${item.slug}`
   if (parent === "Centres for Excellence")
-    return `/centres-for-excellence/${item.slug}`;
-  if (parent === "About Us") return `/about-us/${item.slug}`;
-  // if (parent === 'Admissions') {
-  //     if (item.slug === 'bachelors-programs') return '/admissions/bachelors-programs'
-  //     if (item.slug === 'masters-programs') return '/admissions/masters-programs'
-  //     return `/admissions/${item.slug}`
-  // }
-  if (parent === "Focus Centres") return `/focus-centre/${item.slug}`;
-  return `/${item.slug}`;
-};
+    return `/centres-for-excellence/${item.slug}`
+  if (parent === "About Us") return `/about-us/${item.slug}`
+  if (parent === "Focus Centres") return `/focus-centre/${item.slug}`
+
+  return `/${item.slug}`
+}
 
 // --- Submenu Renderer ---
 const RenderSubmenu = ({
@@ -132,7 +334,7 @@ const RenderSubmenu = ({
   setIsMobileMenuOpen,
 }) =>
   items.map((item, idx) => {
-    const key = `${parentKey}-${idx}`;
+    const key = `${parentKey}-${idx}`
     if (!item.submenu) {
       return (
         <Link
@@ -141,14 +343,14 @@ const RenderSubmenu = ({
           className="block px-4 py-2 border-b border-white/20 hover:bg-white/10 text-[14px] 2xl:text-[18px]"
           onClick={() => {
             if (isMobile) {
-              setIsMobileMenuOpen(false);
-              setActiveSubmenu(null);
+              setIsMobileMenuOpen(false)
+              setActiveSubmenu(null)
             }
           }}
         >
           {item.name}
         </Link>
-      );
+      )
     }
     return (
       <div key={key} className="border-b border-white/20">
@@ -186,8 +388,8 @@ const RenderSubmenu = ({
           </div>
         )}
       </div>
-    );
-  });
+    )
+  })
 
 // Extract NavBar content to avoid duplication
 const NavBarContent = ({
@@ -220,8 +422,8 @@ const NavBarContent = ({
       {/* Desktop Nav */}
       <div className="hidden lg:flex flex-col border-l border-dashed border-white/20 h-full justify-center">
         <div className="grid grid-cols-8 gap-4 border-b border-dashed border-white/20 lg:px-16 py-2 h-1/2 items-center">
-          <div className="flex items-center space-x-6 gap-5 col-span-3 h-full">
-            <Link
+          <div className="flex items-center space-x-6 gap-3 col-span-3 h-full">
+            {/* <Link
               href="/resources"
               className="hover:text-gray-300 text-[14px] 2xl:text-[18px]"
             >
@@ -232,6 +434,18 @@ const NavBarContent = ({
               className="hover:text-gray-300 text-[14px] 2xl:text-[18px]"
             >
               News & Events
+            </Link> */}
+            <Link
+              href="/coming-soon"
+              className="hover:text-gray-300 text-[14px] 2xl:text-[18px]"
+            >
+              Alumni
+            </Link>
+            <Link
+              href="/coming-soon"
+              className="hover:text-gray-300 text-[14px] 2xl:text-[18px]"
+            >
+              Picture Gallery
             </Link>
           </div>
           <div className="flex items-center justify-end gap-2 space-x-6 col-span-5 h-full">
@@ -268,12 +482,12 @@ const NavBarContent = ({
                 key={idx}
                 className="relative group h-full flex items-center"
                 onMouseEnter={() => {
-                  setHoveredMenu(idx);
-                  setHoveredSubmenu(null);
+                  setHoveredMenu(idx)
+                  setHoveredSubmenu(null)
                 }}
                 onMouseLeave={() => {
-                  setHoveredMenu(null);
-                  setHoveredSubmenu(null);
+                  setHoveredMenu(null)
+                  setHoveredSubmenu(null)
                 }}
               >
                 <span className="hover:text-gray-300 text-[16px] 2xl:text-[18px] cursor-default">
@@ -283,8 +497,8 @@ const NavBarContent = ({
                   <div className="absolute top-full left-0 bg-[#002561] shadow-[0_3px_8px_#0000005C] pt-2 z-50 min-w-[220px]">
                     {item.submenu.map((subitem, subIdx) => {
                       const hasNested =
-                        subitem.submenu && subitem.submenu.length > 0;
-                      const key = `${idx}-${subIdx}`;
+                        subitem.submenu && subitem.submenu.length > 0
+                      const key = `${idx}-${subIdx}`
                       return (
                         <div
                           key={key}
@@ -319,7 +533,7 @@ const NavBarContent = ({
                             </div>
                           )}
                         </div>
-                      );
+                      )
                     })}
                   </div>
                 )}
@@ -332,8 +546,8 @@ const NavBarContent = ({
       <div className="lg:hidden flex items-center justify-end px-4">
         <button
           onClick={() => {
-            setIsMobileMenuOpen(!isMobileMenuOpen);
-            if (!isMobileMenuOpen) setActiveSubmenu(null);
+            setIsMobileMenuOpen(!isMobileMenuOpen)
+            if (!isMobileMenuOpen) setActiveSubmenu(null)
           }}
           className="text-white p-2 z-0"
           aria-label="Toggle mobile menu"
@@ -353,8 +567,8 @@ const NavBarContent = ({
                   onClick={() => {
                     setActiveSubmenu(
                       activeSubmenu === `${idx}` ? null : `${idx}`
-                    );
-                    setActiveNestedSubmenu(null);
+                    )
+                    setActiveNestedSubmenu(null)
                   }}
                   className="w-full flex justify-between items-center text-white px-4 py-3 text-lg font-semibold"
                 >
@@ -384,7 +598,7 @@ const NavBarContent = ({
                                   activeNestedSubmenu === `${idx}-${subIdx}`
                                     ? null
                                     : `${idx}-${subIdx}`
-                                );
+                                )
                               }}
                               className="w-full flex justify-between items-center text-white px-4 py-2 text-[14px]"
                             >
@@ -409,9 +623,9 @@ const NavBarContent = ({
                                       )}
                                       className="block px-4 py-2 border-b border-white/20 hover:bg-white/10 text-[14px]"
                                       onClick={() => {
-                                        setIsMobileMenuOpen(false);
-                                        setActiveSubmenu(null);
-                                        setActiveNestedSubmenu(null);
+                                        setIsMobileMenuOpen(false)
+                                        setActiveSubmenu(null)
+                                        setActiveNestedSubmenu(null)
                                       }}
                                     >
                                       {nestedItem.name}
@@ -426,9 +640,9 @@ const NavBarContent = ({
                             href={generateHref(subitem, item.name)}
                             className="block px-4 py-2 border-b border-white/20 hover:bg-white/10 text-[14px]"
                             onClick={() => {
-                              setIsMobileMenuOpen(false);
-                              setActiveSubmenu(null);
-                              setActiveNestedSubmenu(null);
+                              setIsMobileMenuOpen(false)
+                              setActiveSubmenu(null)
+                              setActiveNestedSubmenu(null)
                             }}
                           >
                             {subitem.name}
@@ -445,9 +659,9 @@ const NavBarContent = ({
         <div
           className="w-[25%] bg-black bg-opacity-50 cursor-pointer relative"
           onClick={() => {
-            setIsMobileMenuOpen(false);
-            setActiveSubmenu(null);
-            setActiveNestedSubmenu(null);
+            setIsMobileMenuOpen(false)
+            setActiveSubmenu(null)
+            setActiveNestedSubmenu(null)
           }}
         >
           {/* Close button on overlay */}
@@ -455,10 +669,10 @@ const NavBarContent = ({
             className="absolute top-4 right-4 text-white bg-black z-50 text-4xl lg:hidden"
             aria-label="Close menu"
             onClick={(e) => {
-              e.stopPropagation();
-              setIsMobileMenuOpen(false);
-              setActiveSubmenu(null);
-              setActiveNestedSubmenu(null);
+              e.stopPropagation()
+              setIsMobileMenuOpen(false)
+              setActiveSubmenu(null)
+              setActiveNestedSubmenu(null)
             }}
           >
             <FaTimes />
@@ -467,60 +681,58 @@ const NavBarContent = ({
       </div>
     )}
   </>
-);
+)
 
 const NavBar = () => {
-  const [hoveredMenu, setHoveredMenu] = useState(null);
-  const [hoveredSubmenu, setHoveredSubmenu] = useState(null);
-  const [activeSubmenu, setActiveSubmenu] = useState(null);
-  const [activeNestedSubmenu, setActiveNestedSubmenu] = useState(null);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const pathname = usePathname();
-  const prevIsScrolled = useRef(false);
+  const [hoveredMenu, setHoveredMenu] = useState(null)
+  const [hoveredSubmenu, setHoveredSubmenu] = useState(null)
+  const [activeSubmenu, setActiveSubmenu] = useState(null)
+  const [activeNestedSubmenu, setActiveNestedSubmenu] = useState(null)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const pathname = usePathname()
+  const prevIsScrolled = useRef(false)
   const [transitionStyle, setTransitionStyle] = useState(
     "opacity 1s cubic-bezier(0.4,0,0.2,1), transform 1s cubic-bezier(0.4,0,0.2,1)"
-    
-  );
-  
-  const prevScrollY = useRef(0);
+  )
+
+  const prevScrollY = useRef(0)
 
   useEffect(() => {
     if (
       typeof window !== "undefined" &&
       "scrollRestoration" in window.history
     ) {
-      window.history.scrollRestoration = "manual";
+      window.history.scrollRestoration = "manual"
     }
-  }, []);
+  }, [])
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({ top: 0, behavior: "smooth" })
     }
-  }, [pathname]);
+  }, [pathname])
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 1024);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-  
+    const handleResize = () => setIsMobile(window.innerWidth < 1024)
+    handleResize()
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
-        setIsScrolled(true);
+        setIsScrolled(true)
       } else {
-        setIsScrolled(false);
+        setIsScrolled(false)
       }
-    };
+    }
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
   // useEffect(() => {
   //   const handleScroll = () => {
   //     const threshold = 0; // 10px
@@ -550,43 +762,43 @@ const NavBar = () => {
   // }, [isScrolled]);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
-    let scrollY = 0;
+    if (typeof window === "undefined") return
+    let scrollY = 0
     if (isMobileMenuOpen && isMobile) {
-      scrollY = window.scrollY;
-      document.body.style.position = "fixed";
-      document.body.style.top = `-${scrollY}px`;
-      document.body.style.left = "0";
-      document.body.style.right = "0";
-      document.body.style.overflow = "hidden";
-      document.body.style.width = "100%";
-      document.body.style.height = "100vh";
-      document.documentElement.style.overflow = "hidden";
-      document.documentElement.style.height = "100%";
+      scrollY = window.scrollY
+      document.body.style.position = "fixed"
+      document.body.style.top = `-${scrollY}px`
+      document.body.style.left = "0"
+      document.body.style.right = "0"
+      document.body.style.overflow = "hidden"
+      document.body.style.width = "100%"
+      document.body.style.height = "100vh"
+      document.documentElement.style.overflow = "hidden"
+      document.documentElement.style.height = "100%"
       return () => {
-        document.body.style.position = "";
-        document.body.style.top = "";
-        document.body.style.left = "";
-        document.body.style.right = "";
-        document.body.style.overflow = "";
-        document.body.style.width = "";
-        document.body.style.height = "";
-        document.documentElement.style.overflow = "";
-        document.documentElement.style.height = "";
-        window.scrollTo(0, scrollY);
-      };
+        document.body.style.position = ""
+        document.body.style.top = ""
+        document.body.style.left = ""
+        document.body.style.right = ""
+        document.body.style.overflow = ""
+        document.body.style.width = ""
+        document.body.style.height = ""
+        document.documentElement.style.overflow = ""
+        document.documentElement.style.height = ""
+        window.scrollTo(0, scrollY)
+      }
     } else {
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.left = "";
-      document.body.style.right = "";
-      document.body.style.overflow = "";
-      document.body.style.width = "";
-      document.body.style.height = "";
-      document.documentElement.style.overflow = "";
-      document.documentElement.style.height = "";
+      document.body.style.position = ""
+      document.body.style.top = ""
+      document.body.style.left = ""
+      document.body.style.right = ""
+      document.body.style.overflow = ""
+      document.body.style.width = ""
+      document.body.style.height = ""
+      document.documentElement.style.overflow = ""
+      document.documentElement.style.height = ""
     }
-  }, [isMobileMenuOpen, isMobile]);
+  }, [isMobileMenuOpen, isMobile])
 
   return (
     <>
@@ -595,7 +807,6 @@ const NavBar = () => {
         className={`navbar bg-[#002561] text-white shadow-[0_3px_8px_#0000005C] w-full fixed top-0 left-0 z-50 border-b border-white/20 ${
           isScrolled ? "scrolled" : ""
         }`}
-        
       >
         <NavBarContent
           menuItems={menuItems}
@@ -639,7 +850,7 @@ const NavBar = () => {
         />
       </nav> */}
     </>
-  );
-};
+  )
+}
 
-export default NavBar;
+export default NavBar
