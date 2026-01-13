@@ -459,7 +459,7 @@ const NavBarContent = ({
             </div>
             <div className="group inline-block">
               <button className="relative px-5 text-[14px] 2xl:text-[18px] py-0.5 bg-[#0072C5] group-hover:bg-[#0072C5] text-white overflow-hidden cursor-pointer transition-colors duration-300">
-                Know More
+               Apply Now
                 <span className="absolute top-0 right-0 w-[12px] h-[12px] bg-[#002561] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0" />
                 <span className="absolute top-0 right-0 w-0 h-0 border-t-[12px] border-l-[12px] border-t-transparent border-l-[#2050B1] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
               </button>
