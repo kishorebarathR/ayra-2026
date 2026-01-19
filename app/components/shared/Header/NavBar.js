@@ -53,7 +53,17 @@ const menuItems = [
   {
     name: "Academics",
     submenu: [
-      { name: "Program Details", slug: "/admissions/bachelors-programs" },
+      { name: "Program Overview", slug: "/admissions/academic-programs" },
+      {
+        name: "Program Details",
+        submenu: [
+          {
+            name: "Bachelors Programs",
+            slug: "/admissions/bachelors-programs",
+          },
+          { name: "Masters Programs", slug: "/admissions/masters-programs" },
+        ],
+      },
       { name: "Academic Calendar", slug: "/coming-soon" },
       { name: "Examinations", slug: "/coming-soon" },
       {
@@ -459,7 +469,7 @@ const NavBarContent = ({
             </div>
             <div className="group inline-block">
               <button className="relative px-5 text-[14px] 2xl:text-[18px] py-0.5 bg-[#0072C5] group-hover:bg-[#0072C5] text-white overflow-hidden cursor-pointer transition-colors duration-300">
-               Apply Now
+                Apply Now
                 <span className="absolute top-0 right-0 w-[12px] h-[12px] bg-[#002561] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0" />
                 <span className="absolute top-0 right-0 w-0 h-0 border-t-[12px] border-l-[12px] border-t-transparent border-l-[#2050B1] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
               </button>
@@ -510,6 +520,10 @@ const NavBarContent = ({
                             <Link
                               href={generateHref(subitem, item.name)}
                               className="block px-4 py-2 border-b border-white/20 hover:bg-white/10 text-[14px]"
+                              onClick={() => {
+                                setHoveredMenu(null)
+                                setHoveredSubmenu(null)
+                              }}
                             >
                               {subitem.name}
                             </Link>
@@ -526,6 +540,10 @@ const NavBarContent = ({
                                   key={`${key}-${nestedIdx}`}
                                   href={generateHref(nestedItem, subitem.name)}
                                   className="block px-4 py-2 border-b border-white/20 hover:bg-white/10 text-[14px]"
+                                  onClick={() => {
+                                    setHoveredMenu(null)
+                                    setHoveredSubmenu(null)
+                                  }}
                                 >
                                   {nestedItem.name}
                                 </Link>
