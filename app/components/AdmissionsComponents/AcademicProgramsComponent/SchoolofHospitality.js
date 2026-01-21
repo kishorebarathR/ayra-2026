@@ -41,9 +41,9 @@ const NewsAndEvents = () => {
             <Image
               src="/admissions/academic-programs/school-of-hospitality.webp"
               alt="news and events"
-              width={350}
-              height={370}
-              className="w-full h-auto p-4 max-w-[300px] "
+              width={450}
+              height={470}
+              className="w-full h-auto p-4 max-w-[400px] "
             />
           </div>
           <div className="w-full md:w-1/2 flex flex-col justify-center items-center lg:items-center px-4 md:px-0">
